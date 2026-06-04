@@ -43,6 +43,9 @@ export class MatchMapper {
       gameDuration: info.gameDuration,
       gameVersion: info.gameVersion,
       timestamp: info.gameStartTimestamp,
+      mapId: info.mapId,
+      queueId: info.queueId,
+      gameCreation: info.gameCreation,
     };
   }
 

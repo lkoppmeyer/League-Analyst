@@ -4,6 +4,15 @@ import { RiotMatchDto } from '../types/riot.js';
 // Default base is americas; getBaseForMatchId will select correct regional host
 const DEFAULT_RIOT_API_BASE = 'https://americas.api.riotgames.com';
 
+// Regional routing clusters used by account-v1 and match-v5.
+export type RiotRegion = 'americas' | 'europe' | 'asia';
+
+export interface RiotAccount {
+  puuid: string;
+  gameName: string;
+  tagLine: string;
+}
+
 export interface RiotApiClientConfig {
   apiKey: string;
   timeout?: number;
@@ -58,6 +67,73 @@ export class RiotApiClient {
       
       throw error;
     }
+  }
+
+  /**
+   * Resolve a Riot ID (gameName#tagLine) to an account, including the puuid.
+   * Account-v1 is reachable on any regional cluster and returns the same puuid.
+   */
+  async getAccountByRiotId(
+    gameName: string,
+    tagLine: string,
+    region: RiotRegion
+  ): Promise<RiotAccount> {
+    const url = `https://${region}.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${encodeURIComponent(
+      gameName
+    )}/${encodeURIComponent(tagLine)}`;
+
+    try {
+      const response = await axios.get<RiotAccount>(url, {
+        headers: { 'X-Riot-Token': this.apiKey, 'User-Agent': 'LoLEsportsAnalyst/1.0' },
+        timeout: this.timeout,
+      });
+      return response.data;
+    } catch (error) {
+      throw this.mapError(error, `Riot account not found: ${gameName}#${tagLine}`);
+    }
+  }
+
+  /**
+   * Fetch the most recent match IDs for a puuid from the given regional cluster.
+   */
+  async getMatchIdsByPuuid(
+    puuid: string,
+    region: RiotRegion,
+    options: { start?: number; count?: number } = {}
+  ): Promise<string[]> {
+    const { start = 0, count = 20 } = options;
+    const url = `https://${region}.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?start=${start}&count=${count}`;
+
+    try {
+      const response = await axios.get<string[]>(url, {
+        headers: { 'X-Riot-Token': this.apiKey, 'User-Agent': 'LoLEsportsAnalyst/1.0' },
+        timeout: this.timeout,
+      });
+      return response.data;
+    } catch (error) {
+      throw this.mapError(error, 'Could not load match history');
+    }
+  }
+
+  /** Translate an axios error into a friendly Error, reusing the status handling. */
+  private mapError(error: unknown, notFoundMessage: string): Error {
+    if (axios.isAxiosError(error)) {
+      const axiosError = error as AxiosError;
+      if (axiosError.response?.status === 404) {
+        return new Error(notFoundMessage);
+      }
+      if (axiosError.response?.status === 429) {
+        const retryAfter = axiosError.response?.headers['retry-after'] || '60';
+        return new Error(`Rate limited. Retry after ${retryAfter}s`);
+      }
+      if (axiosError.response?.status === 401 || axiosError.response?.status === 403) {
+        return new Error('Invalid or expired API key');
+      }
+      return new Error(
+        `Riot API error: ${axiosError.response?.status} ${axiosError.response?.statusText}`
+      );
+    }
+    return error instanceof Error ? error : new Error('Unknown Riot API error');
   }
 
   /**

@@ -1,7 +1,7 @@
 import { Router, Request, Response } from 'express';
 import { RiotApiClient } from '../data/riotApiClient.js';
 import { Cache, RateLimiter } from '../data/cache.js';
-import { MatchMapper } from '../domain/matchMapper.js';
+import { getOrFetchMatch } from '../domain/matchService.js';
 import { ApiResponse, MatchData } from '../types/app.js';
 
 export interface MatchRouteConfig {
@@ -36,35 +36,7 @@ export function createMatchRoutes(config: MatchRouteConfig): Router {
     }
 
     try {
-      // Check cache first
-      const cachedMatch = cache.get(matchId);
-      if (cachedMatch) {
-        console.log(`[CACHE HIT] Match ${matchId}`);
-        const response: ApiResponse<MatchData> = {
-          success: true,
-          data: cachedMatch,
-        };
-        return res.json(response);
-      }
-
-      console.log(`[API FETCH] Match ${matchId}`);
-      
-      // Fetch from Riot API
-      let riotMatch = await riotApiClient.getMatch(matchId);
-
-      // Normalize shape: some responses might already be the `info` object
-      if (!('info' in riotMatch) && riotMatch) {
-        riotMatch = {
-          metadata: (riotMatch as any).metadata || { matchId },
-          info: riotMatch as any,
-        } as any;
-      }
-
-      // Map to app format
-      const appMatch = MatchMapper.mapRiotToApp(riotMatch as any);
-      
-      // Store in cache
-      cache.set(matchId, appMatch);
+      const appMatch = await getOrFetchMatch(matchId, riotApiClient, cache);
 
       const response: ApiResponse<MatchData> = {
         success: true,

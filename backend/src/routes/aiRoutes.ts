@@ -1,12 +1,35 @@
 import { Router, Request, Response } from 'express';
 import axios from 'axios';
-import { buildSystemPrompt } from '../prompts/promptLoader.js';
+import { buildSystemPrompt, listPersonas } from '../prompts/promptLoader.js';
+
+/**
+ * If we know which player the viewer is in this match, build a sentence that
+ * lets the model analyse from that player's perspective.
+ */
+function buildViewerContext(matchData: any, summoner?: string, puuid?: string): string {
+  if (!matchData?.players || (!puuid && !summoner)) return '';
+
+  const player = matchData.players.find(
+    (p: any) => (puuid && p.id === puuid) || (summoner && p.name === summoner)
+  );
+  if (!player) return '';
+
+  const side = player.team === 'blue' ? 'blauen' : 'roten';
+  const name = summoner || player.name;
+  const champ = player.championName ? ` und spielt ${player.championName}` : '';
+  return `Der Nutzer, der dir Fragen stellt, ist ${name}. Er ist im Spiel ${player.role} im ${side} Team${champ}. Wenn es passt, sprich ihn direkt an und analysiere das Spiel auch aus seiner Perspektive, ohne andere Spieler zu ignorieren.`;
+}
 
 export function createAiRoutes() {
   const router = Router();
 
+  // Personas available for the frontend dropdown.
+  router.get('/personas', (_req: Request, res: Response) => {
+    return res.json(listPersonas());
+  });
+
   router.post('/', async (req: Request, res: Response) => {
-    const { userPrompt, persona, modelMode, matchData } = req.body as any;
+    const { userPrompt, persona, modelMode, matchData, summoner, puuid } = req.body as any;
 
     if (!userPrompt) {
       return res.status(400).send('userPrompt required');
@@ -17,7 +40,7 @@ export function createAiRoutes() {
       return res.status(500).send('OpenAI API key not configured on server');
     }
 
-    const systemPrompt = buildSystemPrompt(persona ?? '');
+    const systemPrompt = buildSystemPrompt(persona ?? '', buildViewerContext(matchData, summoner, puuid));
 
     const userMessage = `Frage: ${userPrompt}\n\nSpieldaten:\n${JSON.stringify(matchData, null, 2)}`;
 

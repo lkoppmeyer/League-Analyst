@@ -6,7 +6,8 @@
   "main": "dist/main.js",
   "scripts": {
     "dev": "tsx watch src/main.ts",
-    "build": "tsc",
+    "build": "tsc && npm run copy:prompts",
+    "copy:prompts": "mkdir -p dist/prompts/personas && cp src/prompts/*.md dist/prompts/ && cp src/prompts/personas/*.md dist/prompts/personas/",
     "start": "node dist/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

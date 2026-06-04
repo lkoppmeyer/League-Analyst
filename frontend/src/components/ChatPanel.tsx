@@ -1,16 +1,24 @@
 import { FormEvent, useEffect, useRef, useState } from 'react';
-import { ChatMessage } from '../types';
+import { ChatMessage, Persona } from '../types';
 
 type Props = {
   messages: ChatMessage[];
+  personas: Persona[];
   onSend: (message: string, persona: string, modelMode: 'economy' | 'best') => void;
 };
 
-export default function ChatPanel({ messages, onSend }: Props) {
+export default function ChatPanel({ messages, personas, onSend }: Props) {
   const [prompt, setPrompt] = useState('');
-  const [persona, setPersona] = useState('Profi Esports Analyst');
+  const [persona, setPersona] = useState('');
   const [modelMode, setModelMode] = useState<'economy' | 'best'>('economy');
   const historyRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    // Default to the first persona once they're loaded.
+    if (!persona && personas.length > 0) {
+      setPersona(personas[0].id);
+    }
+  }, [personas, persona]);
 
   useEffect(() => {
     // Auto-scroll to bottom when messages change
@@ -34,9 +42,11 @@ export default function ChatPanel({ messages, onSend }: Props) {
         <label>
           Persona:
           <select value={persona} onChange={(e) => setPersona(e.target.value)}>
-            <option>Profi Esports Analyst</option>
-            <option>Challenger Soloq Spieler</option>
-            <option>Leidenschaftlicher Low Elo Spieler</option>
+            {personas.map((p) => (
+              <option key={p.id} value={p.id}>
+                {p.label}
+              </option>
+            ))}
           </select>
         </label>
         <label style={{ marginLeft: 12 }}>

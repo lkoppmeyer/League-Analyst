@@ -30,3 +30,34 @@ export type ChatMessage = {
   author: 'user' | 'assistant';
   text: string;
 };
+
+export type Persona = {
+  id: string;
+  label: string;
+};
+
+export type RiotAccount = {
+  puuid: string;
+  gameName: string;
+  tagLine: string;
+};
+
+export type ApiResponse<T> = {
+  success: boolean;
+  data?: T;
+  error?: string;
+  statusCode?: number;
+};
+
+export type MatchSummary = {
+  matchId: string;
+  championName?: string;
+  role: string;
+  win: boolean;
+  kills: number;
+  deaths: number;
+  assists: number;
+  queueId?: number;
+  gameDuration?: number;
+  gameCreation?: number;
+};

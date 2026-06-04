@@ -1,3 +1,5 @@
+// UNUSED — replaced by SearchView (Riot-ID search + match history flow)
+
 import { FormEvent } from 'react';
 
 type Props = {

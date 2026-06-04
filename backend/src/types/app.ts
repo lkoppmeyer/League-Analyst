@@ -39,12 +39,29 @@ export type MatchData = {
   gameDuration?: number;
   gameVersion?: string;
   timestamp?: number;
+  mapId?: number;
+  queueId?: number;
+  gameCreation?: number;
 };
 
 export type ChatMessage = {
   id: string;
   author: 'user' | 'assistant';
   text: string;
+};
+
+// Compact summary of a single match for the history list.
+export type MatchSummary = {
+  matchId: string;
+  championName?: string;
+  role: string;
+  win: boolean;
+  kills: number;
+  deaths: number;
+  assists: number;
+  queueId?: number;
+  gameDuration?: number;
+  gameCreation?: number;
 };
 
 export interface ApiResponse<T> {

@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import { RiotApiClient } from './data/riotApiClient.js';
 import { Cache, RateLimiter } from './data/cache.js';
 import { createMatchRoutes } from './routes/matchRoutes.js';
+import { createSummonerRoutes } from './routes/summonerRoutes.js';
 import { createAiRoutes } from './routes/aiRoutes.js';
 import { MatchData } from './types/app.js';
 
@@ -39,7 +40,14 @@ const matchRoutes = createMatchRoutes({
   rateLimiter,
 });
 
+const summonerRoutes = createSummonerRoutes({
+  riotApiClient,
+  cache: matchCache,
+  rateLimiter,
+});
+
 app.use('/api/match', matchRoutes);
+app.use('/api/summoner', summonerRoutes);
 app.use('/api/ask', createAiRoutes());
 
 // Health check endpoint
