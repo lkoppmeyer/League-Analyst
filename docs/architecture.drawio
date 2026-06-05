@@ -1,151 +1,195 @@
-<mxfile host="app.diagrams.net" agent="GitHub Copilot" version="24.0.0">
+<mxfile host="app.diagrams.net" agent="Manual" version="24.0.0">
   <diagram id="lol-analyst-arch" name="Architektur">
-    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
 
         <!-- ===================== FRONTEND APP ===================== -->
-        <mxCell id="fe-app" value="FRONTEND&#10;React + Vite&#10;(eigenständige App · läuft auf :5173)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=top;fontSize=14;fontStyle=1;spacingTop=10;arcSize=4;" vertex="1" parent="1">
-          <mxGeometry x="80" y="80" width="420" height="360" as="geometry" />
+        <mxCell id="fe-app" value="FRONTEND&#10;React + Vite + react-router-dom&#10;(läuft auf :5173)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=top;fontSize=14;fontStyle=1;spacingTop=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="60" y="80" width="460" height="500" as="geometry" />
         </mxCell>
         <mxCell id="fe-folder" value="📁 frontend/src/" style="text;html=1;align=left;fontStyle=2;fontColor=#3a5a87;" vertex="1" parent="1">
-          <mxGeometry x="100" y="118" width="200" height="20" as="geometry" />
+          <mxGeometry x="80" y="118" width="200" height="20" as="geometry" />
         </mxCell>
 
-        <mxCell id="fe-matchinput" value="MatchInput&#10;Match-ID Eingabe" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="100" y="150" width="180" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="fe-playercard" value="PlayerCard&#10;Champion-Bild · KDA · Gold" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="300" y="150" width="180" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="fe-chatpanel" value="ChatPanel&#10;Persona-Auswahl · Modell-Toggle · Frage stellen" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="100" y="230" width="380" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="fe-loading" value="LoadingScreen · App.tsx (State &amp; Fetch)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="100" y="310" width="380" height="40" as="geometry" />
+        <mxCell id="fe-router" value="BrowserRouter (main.tsx)&#10;Route / → SearchView&#10;Route /match/:id?gameName&amp;tagLine&amp;puuid → MatchView" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f4ff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="148" width="420" height="70" as="geometry" />
         </mxCell>
 
-        <!-- Marker: Frontend editing zone -->
-        <mxCell id="fe-marker" value="✏️ HIER ARBEITEN, wenn du das Frontend / UI veränderst" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;dashed=1;dashPattern=6 4;fontSize=12;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="100" y="370" width="380" height="50" as="geometry" />
+        <mxCell id="fe-searchview" value="SearchView&#10;Riot-ID Eingabe · Region-Auswahl&#10;→ lädt Account (puuid) + Match-History&#10;→ klickbare History-Cards" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="235" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-matchview" value="MatchView&#10;Liest matchId + summoner-Params aus URL&#10;LoadingScreen · PlayerDetail&#10;ChatPanel (Personas + Modelle dynamisch)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="300" y="235" width="200" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="fe-chatpanel" value="ChatPanel&#10;Personas-Dropdown (dynamisch via GET /api/ask/personas)&#10;Modell-Dropdown (dynamisch via GET /api/ask/models)&#10;Sendet: userPrompt + persona + modelMode + matchData + summoner + puuid" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="345" width="420" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-types" value="types.ts · config.ts&#10;Shared Types + BACKEND_URL + Hilfsfunktionen" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="440" width="420" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="fe-marker" value="✏️ HIER ARBEITEN bei Frontend-Änderungen (Views, ChatPanel, Styles)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;dashed=1;dashPattern=6 4;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="495" width="420" height="40" as="geometry" />
         </mxCell>
 
         <!-- ===================== BACKEND APP ===================== -->
-        <mxCell id="be-app" value="BACKEND&#10;Express + TypeScript&#10;(eigenständige App · läuft auf :3001)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;fontSize=14;fontStyle=1;spacingTop=10;arcSize=3;" vertex="1" parent="1">
-          <mxGeometry x="640" y="80" width="820" height="940" as="geometry" />
+        <mxCell id="be-app" value="BACKEND&#10;Express + TypeScript&#10;(läuft auf :3001)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;fontSize=14;fontStyle=1;spacingTop=10;arcSize=3;" vertex="1" parent="1">
+          <mxGeometry x="580" y="80" width="1180" height="1060" as="geometry" />
         </mxCell>
         <mxCell id="be-folder" value="📁 backend/src/" style="text;html=1;align=left;fontStyle=2;fontColor=#4a7a3a;" vertex="1" parent="1">
-          <mxGeometry x="660" y="118" width="200" height="20" as="geometry" />
+          <mxGeometry x="600" y="118" width="200" height="20" as="geometry" />
         </mxCell>
 
         <!-- API LAYER -->
-        <mxCell id="api-layer" value="API LAYER&#10;routes/matchRoutes.ts · routes/aiRoutes.ts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;fontSize=13;fontStyle=1;spacingTop=8;" vertex="1" parent="1">
-          <mxGeometry x="680" y="150" width="740" height="110" as="geometry" />
+        <mxCell id="api-layer" value="API LAYER  📁 routes/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;fontSize=13;fontStyle=1;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="600" y="148" width="1140" height="130" as="geometry" />
         </mxCell>
         <mxCell id="api-match" value="GET /api/match/:matchId&#10;→ Matchdaten laden + cachen" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="700" y="185" width="340" height="60" as="geometry" />
+          <mxGeometry x="620" y="188" width="280" height="75" as="geometry" />
         </mxCell>
-        <mxCell id="api-ask" value="POST /api/ask&#10;→ KI-Frage beantworten" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="1060" y="185" width="340" height="60" as="geometry" />
+        <mxCell id="api-summoner" value="GET /api/summoner/account/:gameName/:tagLine&#10;→ Account-Lookup (puuid)&#10;GET /api/summoner/history/:puuid&#10;→ letzte 20 SR-Spiele als Summaries" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="920" y="188" width="360" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="api-ask" value="GET /api/ask/personas  →  Persona-Liste&#10;GET /api/ask/models    →  Modell-Liste&#10;POST /api/ask          →  KI-Analyse anfragen" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="188" width="420" height="75" as="geometry" />
         </mxCell>
 
         <!-- DATA LAYER -->
-        <mxCell id="data-layer" value="DATA LAYER&#10;📁 data/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=top;fontSize=13;fontStyle=1;spacingTop=8;" vertex="1" parent="1">
-          <mxGeometry x="680" y="300" width="350" height="330" as="geometry" />
+        <mxCell id="data-layer" value="DATA LAYER  📁 data/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=top;fontSize=13;fontStyle=1;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="600" y="320" width="580" height="410" as="geometry" />
         </mxCell>
-        <mxCell id="data-riot" value="riotApiClient.ts&#10;Riot Match-V5 API · Region-Routing (EUW / NA / KR …)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="700" y="340" width="310" height="70" as="geometry" />
+        <mxCell id="data-riot" value="riotApiClient.ts&#10;getMatch() · getAccountByRiotId() · getMatchIdsByPuuid()&#10;Region-Routing: europe / americas / asia" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="620" y="360" width="540" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="data-cache" value="cache.ts&#10;In-Memory Cache + Rate Limiter" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="700" y="425" width="310" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="data-marker" value="✚ HIER weitere APIs anbinden&#10;(z. B. Esports-/Turnier-Daten — neue Datei analog zu riotApiClient.ts)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;dashed=1;dashPattern=6 4;fontSize=12;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="700" y="500" width="310" height="110" as="geometry" />
+        <mxCell id="data-cache" value="cache.ts&#10;In-Memory Cache (1h TTL) · RateLimiter (20/s, 100/2min)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="620" y="445" width="540" height="55" as="geometry" />
         </mxCell>
 
-        <!-- KI LAYER -->
-        <mxCell id="ki-layer" value="KI LAYER&#10;📁 routes/aiRoutes.ts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;verticalAlign=top;fontSize=13;fontStyle=1;spacingTop=8;" vertex="1" parent="1">
-          <mxGeometry x="1070" y="300" width="330" height="330" as="geometry" />
+        <!-- Champion DB -->
+        <mxCell id="data-champdb" value="championDb.ts  📁 data/&#10;Lädt champions.json + items.json beim Start.&#10;extractChampionContext(entry, role, otherChamps, itemIds)&#10;→ injiziert: general + role_&lt;role&gt; + matchup_&lt;name&gt; + item_&lt;key&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="620" y="515" width="540" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="ki-p1" value="🎙 Persona 1 — Profi Esports Analyst" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="1090" y="340" width="290" height="40" as="geometry" />
+
+        <mxCell id="data-champjson" value="champions.json&#10;~40 Champions: general, role_top/mid/…,&#10;matchup_&lt;name&gt;, item_&lt;key&gt;&#10;(alle Felder optional — leere Felder = weniger Kontext, kein Fehler)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff8e1;strokeColor=#f9a825;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="620" y="620" width="260" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="ki-p2" value="🏆 Persona 2 — Challenger SoloQ Spieler" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="1090" y="390" width="290" height="40" as="geometry" />
+        <mxCell id="data-itemsjson" value="items.json&#10;~30 Items: id, name, key, notes&#10;key = Slug für item_&lt;key&gt; in Champions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff8e1;strokeColor=#f9a825;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="900" y="620" width="260" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="ki-p3" value="🔥 Persona 3 — Leidenschaftl. Low Elo Spieler" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="1090" y="440" width="290" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="ki-model" value="Modell-Wahl: gpt-3.5-turbo  /  gpt-4o" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="1090" y="490" width="290" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="ki-marker" value="✏️ HIER Verpromptung, Wortlaut &amp; KI-Fine-Tuning ändern (personaMap, Modell)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;dashed=1;dashPattern=6 4;fontSize=12;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="1090" y="540" width="290" height="70" as="geometry" />
+
+        <mxCell id="data-marker" value="✚ NEUE CHAMPION-DATEN PFLEGEN: champions.json + items.json editieren&#10;Neue APIs: neue Datei analog zu riotApiClient.ts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;dashed=1;dashPattern=6 4;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="720" width="540" height="50" as="geometry" />
         </mxCell>
 
         <!-- DOMAIN LAYER -->
-        <mxCell id="domain-layer" value="DOMAIN LAYER&#10;📁 domain/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;verticalAlign=top;fontSize=13;fontStyle=1;spacingTop=8;" vertex="1" parent="1">
-          <mxGeometry x="680" y="670" width="740" height="100" as="geometry" />
+        <mxCell id="domain-layer" value="DOMAIN LAYER  📁 domain/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;verticalAlign=top;fontSize=13;fontStyle=1;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="600" y="775" width="580" height="330" as="geometry" />
         </mxCell>
-        <mxCell id="domain-mapper" value="matchMapper.ts — Riot-DTO  →  App-Format (für Frontend &amp; KI)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="700" y="705" width="700" height="50" as="geometry" />
+        <mxCell id="domain-mapper" value="matchMapper.ts&#10;RiotMatchDto → MatchData (App-Format)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="620" y="815" width="540" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="domain-service" value="matchService.ts&#10;getOrFetchMatch() — Cache-or-Fetch für matchRoutes + summonerRoutes&#10;mapWithConcurrency() — rate-limit-freundliche Batch-Fetches" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="620" y="875" width="540" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="domain-enricher" value="matchEnricher.ts&#10;enrichMatchData(MatchData) → EnrichedMatchData für AI:&#10;  · bans: IDs → Namen  · items: IDs → Namen  · gold/CS formatiert&#10;  · championContext[] aus championDb injiziert (role + matchup + item)&#10;buildChampionContextBlock() → Text-Block für System-Prompt" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffecb3;strokeColor=#e65100;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="620" y="945" width="540" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="domain-marker" value="✏️ DATEN-TRANSFORMATION hier: matchMapper / matchEnricher anpassen" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;dashed=1;dashPattern=6 4;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="1055" width="540" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- PROMPT INJECTOR LAYER -->
+        <mxCell id="prompt-layer" value="PROMPT INJECTOR  📁 prompts/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;verticalAlign=top;fontSize=13;fontStyle=1;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="320" width="520" height="790" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prompt-loader" value="promptLoader.ts&#10;buildSystemPrompt(personaId, champContext, viewerContext)&#10;Laedt alle Teile, fuegt sie mit --- zusammen:&#10;[1] Persona  [2] core.md  [3] dataset.md  [4] champContext  [5] viewerContext" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="365" width="480" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prompt-core" value="core.md&#10;Universelle Regeln: kurz, kein Markdown,&#10;nichts behaupten was nicht aus Daten hervorgeht" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="470" width="480" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prompt-dataset" value="dataset.md&#10;Erklärung des EnrichedMatchData-Formats:&#10;Wie gold/CS/objectives zu interpretieren sind,&#10;was championContext bedeutet" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="545" width="480" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prompt-personas" value="personas/ Ordner — dynamisch geladen&#10;kumpel.md · analyst.md · soloq.md · lowelo.md&#10;Frontmatter: label + order&#10;✚ NEUE PERSONA = neue .md Datei mit --- label: / order: ---" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="630" width="480" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prompt-champctx" value="Champion-Kontext-Block (dynamisch zur Laufzeit)&#10;buildChampionContextBlock(matchData)&#10;→ Für jeden Spieler: general + role_X + matchup_Y + item_Z&#10;→ Injiziert in System-Prompt vor viewerContext" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff8e1;strokeColor=#f9a825;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="725" width="480" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prompt-viewer" value="Viewer-Kontext (dynamisch, wenn Summoner bekannt)&#10;buildViewerContext(matchData, summoner, puuid)&#10;→ 'Der Nutzer ist [Name], spielt [Champ] auf [Rolle]...'&#10;→ Nur wenn puuid oder summoner mitgesendet" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="820" width="480" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prompt-models" value="Modell-Registry (in aiRoutes.ts)&#10;economy  → gpt-3.5-turbo&#10;balanced → gpt-4o-mini  (Preis/Leistung)&#10;best     → gpt-4.1  (Flagship)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="915" width="480" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prompt-marker" value="✏️ PROMPTING HIER ANPASSEN:&#10;Persona = personas/*.md editieren oder neue Datei&#10;Champion-Kontext = champions.json / items.json&#10;Modelle = MODELS-Array in aiRoutes.ts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;dashed=1;dashPattern=6 4;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="1010" width="480" height="70" as="geometry" />
         </mxCell>
 
         <!-- ===================== EXTERNAL SERVICES ===================== -->
-        <mxCell id="ext-riot" value="🌐 Riot Match-V5 API&#10;(externe Datenquelle — ALLE Matchdaten)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;fontStyle=1;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="680" y="830" width="350" height="70" as="geometry" />
+        <mxCell id="ext-riot" value="🌐 Riot Match-V5 API + Account-V1&#10;(alle Matchdaten + Summoner-Lookup)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;fontStyle=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="1150" width="420" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="ext-openai" value="🌐 OpenAI Chat API&#10;(externes LLM)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;fontStyle=1;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="1070" y="830" width="330" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="ext-riot-docs" value="📖 Doku: developer.riotgames.com/apis#match-v5" style="text;html=1;align=left;fontStyle=2;fontColor=#666666;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="680" y="905" width="360" height="20" as="geometry" />
+        <mxCell id="ext-openai" value="🌐 OpenAI Chat API&#10;(gpt-3.5-turbo / gpt-4o-mini / gpt-4.1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;fontStyle=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="1150" width="520" height="60" as="geometry" />
         </mxCell>
 
         <!-- ===================== EDGES ===================== -->
-        <!-- Frontend <-> Backend API -->
-        <mxCell id="e-fe-api" value="HTTP (localhost)&#10;fetch / POST" style="endArrow=classic;startArrow=classic;html=1;fontSize=11;strokeColor=#333333;strokeWidth=2;" edge="1" parent="1" source="fe-app" target="api-layer">
+        <mxCell id="e-fe-api" value="HTTP · fetch/POST" style="endArrow=classic;startArrow=classic;html=1;fontSize=11;strokeColor=#333333;strokeWidth=2;" edge="1" parent="1" source="fe-app" target="api-layer">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- API -> Data -->
-        <mxCell id="e-api-data" style="endArrow=classic;html=1;strokeColor=#333333;" edge="1" parent="1" source="api-match" target="data-layer">
+        <mxCell id="e-api-match-data" style="endArrow=classic;html=1;strokeColor=#333333;" edge="1" parent="1" source="api-match" target="data-layer">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <!-- API -> KI -->
-        <mxCell id="e-api-ki" style="endArrow=classic;html=1;strokeColor=#333333;" edge="1" parent="1" source="api-ask" target="ki-layer">
+        <mxCell id="e-api-summ-data" style="endArrow=classic;html=1;strokeColor=#333333;" edge="1" parent="1" source="api-summoner" target="data-layer">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <!-- Data -> Domain -->
+        <mxCell id="e-api-ask-prompt" style="endArrow=classic;html=1;strokeColor=#333333;" edge="1" parent="1" source="api-ask" target="prompt-layer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="e-data-domain" style="endArrow=classic;html=1;strokeColor=#333333;" edge="1" parent="1" source="data-layer" target="domain-layer">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <!-- KI uses Domain data -->
-        <mxCell id="e-ki-domain" value="nutzt App-Daten" style="endArrow=classic;html=1;dashed=1;strokeColor=#9673a6;fontSize=10;" edge="1" parent="1" source="ki-layer" target="domain-layer">
+        <mxCell id="e-champdb-enricher" value="extractChampionContext()" style="endArrow=classic;html=1;strokeColor=#e65100;dashed=1;fontSize=10;" edge="1" parent="1" source="data-champdb" target="domain-enricher">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <!-- Data -> Riot ext -->
+        <mxCell id="e-enricher-prompt" value="champContext" style="endArrow=classic;html=1;strokeColor=#f9a825;dashed=1;fontSize=10;" edge="1" parent="1" source="domain-enricher" target="prompt-champctx">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-prompt-openai" style="endArrow=classic;html=1;strokeColor=#666666;dashed=1;" edge="1" parent="1" source="prompt-models" target="ext-openai">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="e-data-riot" style="endArrow=classic;html=1;strokeColor=#666666;dashed=1;" edge="1" parent="1" source="data-riot" target="ext-riot">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <!-- KI -> OpenAI ext -->
-        <mxCell id="e-ki-openai" style="endArrow=classic;html=1;strokeColor=#666666;dashed=1;" edge="1" parent="1" source="ki-model" target="ext-openai">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
         <!-- ===================== LEGEND ===================== -->
         <mxCell id="legend" value="Legende" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#999999;verticalAlign=top;fontStyle=1;fontSize=12;spacingTop=6;" vertex="1" parent="1">
-          <mxGeometry x="80" y="480" width="420" height="180" as="geometry" />
+          <mxGeometry x="60" y="620" width="460" height="200" as="geometry" />
         </mxCell>
         <mxCell id="legend-edit" value="✏️ Editier-Zone (deine üblichen Anpassungen)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;dashed=1;dashPattern=6 4;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="100" y="515" width="380" height="35" as="geometry" />
+          <mxGeometry x="80" y="655" width="420" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="legend-extend" value="✚ Erweiterungs-Zone (neue APIs anbinden)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;dashed=1;dashPattern=6 4;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="100" y="560" width="380" height="35" as="geometry" />
+        <mxCell id="legend-extend" value="✚ Erweiterungs-Zone (neue APIs / Champions pflegen)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;dashed=1;dashPattern=6 4;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="80" y="695" width="420" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-champdb" value="Champion-DB-Flow (orange gestrichelt = Daten-Anreicherung)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff8e1;strokeColor=#f9a825;dashed=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="80" y="735" width="420" height="30" as="geometry" />
         </mxCell>
         <mxCell id="legend-ext" value="🌐 Externer Service (gestrichelt = außerhalb der App)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="100" y="605" width="380" height="35" as="geometry" />
+          <mxGeometry x="80" y="775" width="420" height="30" as="geometry" />
         </mxCell>
 
       </root>

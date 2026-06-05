@@ -1,18 +1,52 @@
+import type { TimelineInsights } from './timeline.js';
+export type { TimelineInsights };
+
 // App Types - same as frontend
+export type ResolvedRune = {
+  id: number;
+  name: string;
+  iconUrl: string;
+};
+
 export type Player = {
   id: string;
+  participantId: number;   // 1-10, key for timeline correlation
   name: string;
   role: string;
   team: 'blue' | 'red';
   portraitUrl?: string;
   championId?: number;
   championName?: string;
+  champLevel?: number;
   kills?: number;
   deaths?: number;
   assists?: number;
   goldEarned?: number;
   minionsKilled?: number;
   items?: number[];
+  runes?: {
+    keystone?: ResolvedRune;
+    primaryTree?: ResolvedRune;
+    secondaryTree?: ResolvedRune;
+  };
+  // Combat stats
+  totalDamageToChampions?: number;
+  totalDamageTaken?: number;
+  totalHeal?: number;
+  timeCCingOthers?: number;
+  turretKills?: number;
+  // Vision
+  visionScore?: number;
+  wardsPlaced?: number;
+  wardsKilled?: number;
+  // Multi-kills / sprees
+  multiKills?: {
+    double: number;
+    triple: number;
+    quadra: number;
+    penta: number;
+    largestSpree: number;
+  };
 };
 
 export type TeamInfo = {
@@ -42,6 +76,7 @@ export type MatchData = {
   mapId?: number;
   queueId?: number;
   gameCreation?: number;
+  timeline?: TimelineInsights;
 };
 
 export type ChatMessage = {

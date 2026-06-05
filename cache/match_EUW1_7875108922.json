@@ -1,0 +1,2141 @@
+{
+  "matchId": "EUW1_7875108922",
+  "blueTeam": {
+    "id": "100",
+    "name": "Blue Team",
+    "side": "blue",
+    "win": true,
+    "bans": [
+      50,
+      154,
+      875,
+      516,
+      136,
+      143,
+      102,
+      13,
+      32,
+      254,
+      -1,
+      -1,
+      69,
+      63,
+      350,
+      350,
+      32,
+      427
+    ],
+    "objectives": {
+      "baron": 0,
+      "dragon": 0,
+      "tower": 0,
+      "inhibitor": 0,
+      "riftHerald": 0
+    }
+  },
+  "redTeam": {
+    "id": "0",
+    "name": "Red Team",
+    "side": "red",
+    "win": false,
+    "bans": [],
+    "objectives": {
+      "baron": 0,
+      "dragon": 0,
+      "tower": 0,
+      "inhibitor": 0,
+      "riftHerald": 0
+    }
+  },
+  "players": [
+    {
+      "id": "yalFp9G6PdX5u6x-XvTeCScUzbOu4V7iVP8haikX0g8d_vdYpnARx5u5mTjYA2bJl_qioCJXqEtbcQ",
+      "participantId": 1,
+      "name": "Mental Reset",
+      "role": "Unknown",
+      "team": "blue",
+      "championId": 233,
+      "championName": "Briar",
+      "champLevel": 18,
+      "kills": 16,
+      "deaths": 5,
+      "assists": 13,
+      "goldEarned": 16100,
+      "minionsKilled": 2,
+      "items": [
+        223008,
+        223074,
+        447103,
+        447106,
+        222517,
+        223153,
+        3348
+      ],
+      "runes": {},
+      "totalDamageToChampions": 76580,
+      "totalDamageTaken": 83402,
+      "totalHeal": 109811,
+      "timeCCingOthers": 95,
+      "turretKills": 0,
+      "visionScore": 0,
+      "wardsPlaced": 0,
+      "wardsKilled": 0,
+      "multiKills": {
+        "double": 3,
+        "triple": 1,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 7
+      }
+    },
+    {
+      "id": "lcnd9rgJwcFFCFt9Oue2TBKviGtNJWT7DMW4KWmQYwBLo314jdt2dKcYvPmXVUfJJNQsjAxtitfJtA",
+      "participantId": 2,
+      "name": "TwistedBraincell",
+      "role": "Unknown",
+      "team": "blue",
+      "championId": 22,
+      "championName": "Ashe",
+      "champLevel": 18,
+      "kills": 14,
+      "deaths": 7,
+      "assists": 17,
+      "goldEarned": 22368,
+      "minionsKilled": 0,
+      "items": [
+        223124,
+        447107,
+        447101,
+        223153,
+        223302,
+        223172,
+        3348
+      ],
+      "runes": {},
+      "totalDamageToChampions": 65865,
+      "totalDamageTaken": 62911,
+      "totalHeal": 18964,
+      "timeCCingOthers": 103,
+      "turretKills": 0,
+      "visionScore": 5,
+      "wardsPlaced": 0,
+      "wardsKilled": 0,
+      "multiKills": {
+        "double": 3,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 5
+      }
+    },
+    {
+      "id": "EG8_CyK35e-7GF3b-iRJiAqCoeek6GrzxC9W0MZErXuVV6mBEFQM2CySfPErksV7jSiI1rrad1Xxwg",
+      "participantId": 3,
+      "name": "SweetT1e",
+      "role": "Unknown",
+      "team": "blue",
+      "championId": 84,
+      "championName": "Akali",
+      "champLevel": 17,
+      "kills": 9,
+      "deaths": 6,
+      "assists": 6,
+      "goldEarned": 16610,
+      "minionsKilled": 0,
+      "items": [
+        223157,
+        223089,
+        223135,
+        223100,
+        447113,
+        224645,
+        3348
+      ],
+      "runes": {},
+      "totalDamageToChampions": 32596,
+      "totalDamageTaken": 25473,
+      "totalHeal": 3194,
+      "timeCCingOthers": 3,
+      "turretKills": 0,
+      "visionScore": 0,
+      "wardsPlaced": 0,
+      "wardsKilled": 0,
+      "multiKills": {
+        "double": 1,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 6
+      }
+    },
+    {
+      "id": "aND5WDuZGBs7zT0FIMDOvH78kXzGYqgc-4d_oKXaqYJsj0lLltVEhW0C4vX6sGgSYVNtD5RLQiemXw",
+      "participantId": 6,
+      "name": "RalleN",
+      "role": "Unknown",
+      "team": "blue",
+      "championId": 126,
+      "championName": "Jayce",
+      "champLevel": 18,
+      "kills": 20,
+      "deaths": 6,
+      "assists": 5,
+      "goldEarned": 22299,
+      "minionsKilled": 0,
+      "items": [
+        226699,
+        447110,
+        446691,
+        226676,
+        223036,
+        223031,
+        3348
+      ],
+      "runes": {},
+      "totalDamageToChampions": 69612,
+      "totalDamageTaken": 45525,
+      "totalHeal": 4106,
+      "timeCCingOthers": 27,
+      "turretKills": 0,
+      "visionScore": 0,
+      "wardsPlaced": 0,
+      "wardsKilled": 0,
+      "multiKills": {
+        "double": 5,
+        "triple": 2,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 8
+      }
+    },
+    {
+      "id": "ryKaa8fWSZB57klrWAtQrRtLxX20H2HRVc1zDXtI6FWNsMpWdBHacSGwy0Wu7w2WHcCFhwgNUzbUlA",
+      "participantId": 7,
+      "name": "Tiny Evil Veigar",
+      "role": "Unknown",
+      "team": "blue",
+      "championId": 37,
+      "championName": "Sona",
+      "champLevel": 18,
+      "kills": 0,
+      "deaths": 6,
+      "assists": 28,
+      "goldEarned": 17260,
+      "minionsKilled": 0,
+      "items": [
+        447105,
+        223107,
+        223190,
+        223040,
+        223158,
+        223075,
+        3348
+      ],
+      "runes": {},
+      "totalDamageToChampions": 15276,
+      "totalDamageTaken": 37909,
+      "totalHeal": 37126,
+      "timeCCingOthers": 32,
+      "turretKills": 0,
+      "visionScore": 0,
+      "wardsPlaced": 0,
+      "wardsKilled": 0,
+      "multiKills": {
+        "double": 0,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 0
+      }
+    },
+    {
+      "id": "kNAu8P7kgf-QQIp8e1540nQ0-2Z71Fhrk3Imvf_N1tCXLm-HR0bm2qtbGeadWRtgjC1G9xqzbqO-0g",
+      "participantId": 8,
+      "name": "OrilafRioBambiii",
+      "role": "Unknown",
+      "team": "blue",
+      "championId": 902,
+      "championName": "Milio",
+      "champLevel": 18,
+      "kills": 2,
+      "deaths": 4,
+      "assists": 30,
+      "goldEarned": 16040,
+      "minionsKilled": 0,
+      "items": [
+        447105,
+        223190,
+        223107,
+        223165,
+        446667,
+        3430,
+        3348
+      ],
+      "runes": {},
+      "totalDamageToChampions": 11330,
+      "totalDamageTaken": 26743,
+      "totalHeal": 51737,
+      "timeCCingOthers": 37,
+      "turretKills": 0,
+      "visionScore": 0,
+      "wardsPlaced": 0,
+      "wardsKilled": 0,
+      "multiKills": {
+        "double": 0,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 2
+      }
+    },
+    {
+      "id": "tl7ZA82eQPQ0d3OSDz-sc-vteVN45uul73j0YalQXF-odPyafoeWNham8kQDkvVwV804dC-l3xIEyA",
+      "participantId": 12,
+      "name": "Swing",
+      "role": "Unknown",
+      "team": "blue",
+      "championId": 104,
+      "championName": "Graves",
+      "champLevel": 18,
+      "kills": 10,
+      "deaths": 8,
+      "assists": 12,
+      "goldEarned": 26449,
+      "minionsKilled": 6,
+      "items": [
+        447101,
+        220012,
+        446671,
+        3348
+      ],
+      "runes": {},
+      "totalDamageToChampions": 92027,
+      "totalDamageTaken": 38807,
+      "totalHeal": 3112,
+      "timeCCingOthers": 137,
+      "turretKills": 0,
+      "visionScore": 0,
+      "wardsPlaced": 0,
+      "wardsKilled": 0,
+      "multiKills": {
+        "double": 1,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 6
+      }
+    },
+    {
+      "id": "as1sL0ogBUI0EeP2NeK4jsYsfgY2HRumC5KjsZvBVXwwo0Oo9nBdVd3W7UieOAoPeJ-K7jmuUz-N1A",
+      "participantId": 13,
+      "name": "Busco Coche",
+      "role": "Unknown",
+      "team": "blue",
+      "championId": 157,
+      "championName": "Yasuo",
+      "champLevel": 17,
+      "kills": 1,
+      "deaths": 8,
+      "assists": 12,
+      "goldEarned": 14938,
+      "minionsKilled": 0,
+      "items": [
+        223032,
+        223095,
+        443055,
+        226673,
+        223031,
+        223033,
+        3348
+      ],
+      "runes": {},
+      "totalDamageToChampions": 16327,
+      "totalDamageTaken": 22180,
+      "totalHeal": 1915,
+      "timeCCingOthers": 26,
+      "turretKills": 0,
+      "visionScore": 0,
+      "wardsPlaced": 0,
+      "wardsKilled": 0,
+      "multiKills": {
+        "double": 0,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 0
+      }
+    },
+    {
+      "id": "NjZP0N_-96x_41hW_w90Ewg8Khe0mHAJFadtRbJkb6wBPtAppwnk4TyecYXgkPT8vDsHnHnR3tWngw",
+      "participantId": 17,
+      "name": "Art of dying",
+      "role": "Unknown",
+      "team": "blue",
+      "championId": 4,
+      "championName": "TwistedFate",
+      "champLevel": 17,
+      "kills": 13,
+      "deaths": 6,
+      "assists": 10,
+      "goldEarned": 20240,
+      "minionsKilled": 1,
+      "items": [
+        223115,
+        447120,
+        444637,
+        223089,
+        447113,
+        223100,
+        3348
+      ],
+      "runes": {},
+      "totalDamageToChampions": 63539,
+      "totalDamageTaken": 22807,
+      "totalHeal": 1658,
+      "timeCCingOthers": 70,
+      "turretKills": 0,
+      "visionScore": 0,
+      "wardsPlaced": 0,
+      "wardsKilled": 0,
+      "multiKills": {
+        "double": 3,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 7
+      }
+    },
+    {
+      "id": "HBBkT3Ht3h2x3JyPGjuNn8W99_Fm8nkNgRWKxl8JTnrp8fSt9m--qrTZduzZ3GYZ11zb6vnHYJ5XJQ",
+      "participantId": 4,
+      "name": "Λxxel ",
+      "role": "Unknown",
+      "team": "red",
+      "championId": 517,
+      "championName": "Sylas",
+      "champLevel": 15,
+      "kills": 3,
+      "deaths": 8,
+      "assists": 8,
+      "goldEarned": 7500,
+      "minionsKilled": 0,
+      "items": [
+        223020,
+        444637,
+        444636,
+        226657,
+        224633,
+        3348
+      ],
+      "runes": {},
+      "totalDamageToChampions": 48279,
+      "totalDamageTaken": 51524,
+      "totalHeal": 21001,
+      "timeCCingOthers": 49,
+      "turretKills": 0,
+      "visionScore": 0,
+      "wardsPlaced": 0,
+      "wardsKilled": 0,
+      "multiKills": {
+        "double": 0,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 2
+      }
+    },
+    {
+      "id": "_lqTRHBAusjpD7W1YFR9vLym4i_hyPBUCI5QLtx4VOcGR7WIWJEXc5jiH-3_E277yOH8OFwfm-YhkQ",
+      "participantId": 5,
+      "name": "ISO",
+      "role": "Unknown",
+      "team": "red",
+      "championId": 35,
+      "championName": "Shaco",
+      "champLevel": 24,
+      "kills": 7,
+      "deaths": 9,
+      "assists": 5,
+      "goldEarned": 7706,
+      "minionsKilled": 0,
+      "items": [
+        223158,
+        226693,
+        446691,
+        226699,
+        4017,
+        3348
+      ],
+      "runes": {},
+      "totalDamageToChampions": 34860,
+      "totalDamageTaken": 26362,
+      "totalHeal": 1364,
+      "timeCCingOthers": 56,
+      "turretKills": 0,
+      "visionScore": 0,
+      "wardsPlaced": 0,
+      "wardsKilled": 0,
+      "multiKills": {
+        "double": 0,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 3
+      }
+    },
+    {
+      "id": "kJZ9rnAxXPA37pnct3P2Fi3oLDoO7Vn59SAFjO1TJ5re_lGVL5w9uQpCoKW_8JB20oiQ3rl2AUif0Q",
+      "participantId": 9,
+      "name": "SLY DanDan",
+      "role": "Unknown",
+      "team": "red",
+      "championId": 107,
+      "championName": "Rengar",
+      "champLevel": 17,
+      "kills": 13,
+      "deaths": 6,
+      "assists": 13,
+      "goldEarned": 13734,
+      "minionsKilled": 1,
+      "items": [
+        446671,
+        223008,
+        443069,
+        223033,
+        226333,
+        226695,
+        3348
+      ],
+      "runes": {},
+      "totalDamageToChampions": 67082,
+      "totalDamageTaken": 47921,
+      "totalHeal": 20475,
+      "timeCCingOthers": 18,
+      "turretKills": 0,
+      "visionScore": 0,
+      "wardsPlaced": 0,
+      "wardsKilled": 0,
+      "multiKills": {
+        "double": 2,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 4
+      }
+    },
+    {
+      "id": "u5aYS-GezQHHXIbwZwy1shsylaP39_D9Ii8wIs1A8InD5ata6YFOSYnFbuse9DQqtuHabPfTXGsw6Q",
+      "participantId": 10,
+      "name": "SOUD",
+      "role": "Unknown",
+      "team": "red",
+      "championId": 16,
+      "championName": "Soraka",
+      "champLevel": 17,
+      "kills": 0,
+      "deaths": 8,
+      "assists": 21,
+      "goldEarned": 15250,
+      "minionsKilled": 0,
+      "items": [
+        222530,
+        443064,
+        226621,
+        223190,
+        447105,
+        223107,
+        3348
+      ],
+      "runes": {},
+      "totalDamageToChampions": 7575,
+      "totalDamageTaken": 55518,
+      "totalHeal": 73318,
+      "timeCCingOthers": 70,
+      "turretKills": 0,
+      "visionScore": 0,
+      "wardsPlaced": 0,
+      "wardsKilled": 0,
+      "multiKills": {
+        "double": 0,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 0
+      }
+    },
+    {
+      "id": "LmBTP02SSki63-THv-mmYlFAVCftp_Q--3VBulnRsN-HiM-KBm5nRW1C-6Vtq3WcxPdY5qg2gbhCcQ",
+      "participantId": 11,
+      "name": "dfhgqgdqg",
+      "role": "Unknown",
+      "team": "red",
+      "championId": 267,
+      "championName": "Nami",
+      "champLevel": 14,
+      "kills": 2,
+      "deaths": 7,
+      "assists": 10,
+      "goldEarned": 7500,
+      "minionsKilled": 0,
+      "items": [
+        447105,
+        223158,
+        444637,
+        3430,
+        223089,
+        3348
+      ],
+      "runes": {},
+      "totalDamageToChampions": 24227,
+      "totalDamageTaken": 36230,
+      "totalHeal": 28754,
+      "timeCCingOthers": 53,
+      "turretKills": 0,
+      "visionScore": 0,
+      "wardsPlaced": 0,
+      "wardsKilled": 0,
+      "multiKills": {
+        "double": 0,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 0
+      }
+    },
+    {
+      "id": "uwli6vR50pKdntQcC1Io2Bl_G8_GsyjF-uGjPkMYna3U-8FyQ7d5OXEqmdL3JuWqGBbW8yuzw7bMQA",
+      "participantId": 14,
+      "name": "Pentagram",
+      "role": "Unknown",
+      "team": "red",
+      "championId": 5,
+      "championName": "XinZhao",
+      "champLevel": 12,
+      "kills": 0,
+      "deaths": 9,
+      "assists": 1,
+      "goldEarned": 5750,
+      "minionsKilled": 0,
+      "items": [
+        223006,
+        447112,
+        443090,
+        222510,
+        223124,
+        3348
+      ],
+      "runes": {},
+      "totalDamageToChampions": 13104,
+      "totalDamageTaken": 24274,
+      "totalHeal": 8238,
+      "timeCCingOthers": 29,
+      "turretKills": 0,
+      "visionScore": 0,
+      "wardsPlaced": 0,
+      "wardsKilled": 0,
+      "multiKills": {
+        "double": 0,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 0
+      }
+    },
+    {
+      "id": "ztJaakzbOAmwfQO_YX9osGBy88F9LFG8bxI7ZWDVcYg7uOWe_IkEqIdFP-lt3_mPtF3A0mpuxRhKpg",
+      "participantId": 15,
+      "name": "shameless",
+      "role": "Unknown",
+      "team": "red",
+      "championId": 526,
+      "championName": "Rell",
+      "champLevel": 12,
+      "kills": 1,
+      "deaths": 6,
+      "assists": 1,
+      "goldEarned": 5880,
+      "minionsKilled": 2,
+      "items": [
+        223111,
+        443083,
+        443059,
+        223069,
+        3348
+      ],
+      "runes": {},
+      "totalDamageToChampions": 18927,
+      "totalDamageTaken": 41134,
+      "totalHeal": 811,
+      "timeCCingOthers": 44,
+      "turretKills": 0,
+      "visionScore": 0,
+      "wardsPlaced": 0,
+      "wardsKilled": 0,
+      "multiKills": {
+        "double": 0,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 0
+      }
+    },
+    {
+      "id": "q69CXnyavv9iFlt8G4mc3xzWY3Ln-ZC1z3ukV_CkEmxGXYZeoardjkp4Rv7cMK3R5j2LYSCqJP3vGQ",
+      "participantId": 16,
+      "name": "Fakey",
+      "role": "Unknown",
+      "team": "red",
+      "championId": 238,
+      "championName": "Zed",
+      "champLevel": 12,
+      "kills": 1,
+      "deaths": 9,
+      "assists": 0,
+      "goldEarned": 5750,
+      "minionsKilled": 0,
+      "items": [
+        223158,
+        446691,
+        447115,
+        226699,
+        226694,
+        3348
+      ],
+      "runes": {},
+      "totalDamageToChampions": 12101,
+      "totalDamageTaken": 13112,
+      "totalHeal": 273,
+      "timeCCingOthers": 10,
+      "turretKills": 0,
+      "visionScore": 0,
+      "wardsPlaced": 0,
+      "wardsKilled": 0,
+      "multiKills": {
+        "double": 0,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 0
+      }
+    },
+    {
+      "id": "L5c2p7yQYFmVXHJBnL9Qrxuvw3ZtC2wK0kvtXSgHuQN5WOvrp8Vn_9JnZrDfCqQCUD258cwgP4KyLA",
+      "participantId": 18,
+      "name": "Greendun",
+      "role": "Unknown",
+      "team": "red",
+      "championId": 164,
+      "championName": "Camille",
+      "champLevel": 17,
+      "kills": 13,
+      "deaths": 7,
+      "assists": 10,
+      "goldEarned": 15754,
+      "minionsKilled": 1,
+      "items": [
+        223111,
+        223074,
+        223031,
+        447103,
+        447115,
+        226333,
+        3348
+      ],
+      "runes": {},
+      "totalDamageToChampions": 47120,
+      "totalDamageTaken": 63464,
+      "totalHeal": 28360,
+      "timeCCingOthers": 52,
+      "turretKills": 0,
+      "visionScore": 0,
+      "wardsPlaced": 0,
+      "wardsKilled": 0,
+      "multiKills": {
+        "double": 5,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 5
+      }
+    }
+  ],
+  "gameMode": "CHERRY",
+  "gameDuration": 1421,
+  "gameVersion": "16.11.782.9736",
+  "timestamp": 1780498655506,
+  "mapId": 30,
+  "queueId": 1750,
+  "gameCreation": 1780498520104,
+  "timeline": {
+    "participants": {
+      "1": {
+        "levelTimings": [
+          null,
+          null,
+          174,
+          174,
+          303,
+          303,
+          425,
+          425,
+          542,
+          542,
+          638,
+          741,
+          896,
+          1005,
+          1097,
+          1183,
+          1273
+        ],
+        "itemsBought": [
+          {
+            "itemId": 223008,
+            "timestamp": 50
+          },
+          {
+            "itemId": 223074,
+            "timestamp": 458
+          },
+          {
+            "itemId": 222517,
+            "timestamp": 675
+          },
+          {
+            "itemId": 220001,
+            "timestamp": 1023
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1033
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1038
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1043
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1193
+          },
+          {
+            "itemId": 2142,
+            "timestamp": 1199
+          },
+          {
+            "itemId": 2143,
+            "timestamp": 1200
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1200
+          },
+          {
+            "itemId": 222141,
+            "timestamp": 1217
+          },
+          {
+            "itemId": 222141,
+            "timestamp": 1218
+          },
+          {
+            "itemId": 2143,
+            "timestamp": 1356
+          },
+          {
+            "itemId": 2142,
+            "timestamp": 1358
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1358
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1362
+          }
+        ],
+        "goldAt10": 3545,
+        "csAt10": 1,
+        "levelAt10": 11,
+        "goldAt15": 6905,
+        "csAt15": 1
+      },
+      "2": {
+        "levelTimings": [
+          null,
+          null,
+          174,
+          174,
+          303,
+          303,
+          425,
+          425,
+          542,
+          542,
+          638,
+          741,
+          896,
+          1005,
+          1097,
+          1183,
+          1273
+        ],
+        "itemsBought": [
+          {
+            "itemId": 223006,
+            "timestamp": 57
+          },
+          {
+            "itemId": 223153,
+            "timestamp": 443
+          },
+          {
+            "itemId": 223302,
+            "timestamp": 670
+          },
+          {
+            "itemId": 223172,
+            "timestamp": 673
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 760
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 762
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 909
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1013
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1016
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1019
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1021
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1024
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1128
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1201
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1203
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1207
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1209
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1355
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1357
+          },
+          {
+            "itemId": 220002,
+            "timestamp": 1361
+          }
+        ],
+        "goldAt10": 4677,
+        "csAt10": 0,
+        "levelAt10": 11,
+        "goldAt15": 10010,
+        "csAt15": 0
+      },
+      "3": {
+        "levelTimings": [
+          null,
+          null,
+          174,
+          174,
+          303,
+          303,
+          425,
+          425,
+          542,
+          542,
+          638,
+          741,
+          896,
+          1005,
+          1097,
+          1183
+        ],
+        "itemsBought": [
+          {
+            "itemId": 223020,
+            "timestamp": 36
+          },
+          {
+            "itemId": 223100,
+            "timestamp": 435
+          },
+          {
+            "itemId": 224645,
+            "timestamp": 455
+          },
+          {
+            "itemId": 223089,
+            "timestamp": 647
+          },
+          {
+            "itemId": 223135,
+            "timestamp": 934
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1028
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1032
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1111
+          },
+          {
+            "itemId": 2142,
+            "timestamp": 1226
+          },
+          {
+            "itemId": 2143,
+            "timestamp": 1226
+          },
+          {
+            "itemId": 2144,
+            "timestamp": 1227
+          }
+        ],
+        "goldAt10": 4419,
+        "csAt10": 0,
+        "levelAt10": 11,
+        "goldAt15": 8508,
+        "csAt15": 0
+      },
+      "4": {
+        "levelTimings": [
+          null,
+          null,
+          174,
+          174,
+          303,
+          303,
+          425,
+          425,
+          542,
+          542,
+          638,
+          640,
+          741,
+          896
+        ],
+        "itemsBought": [
+          {
+            "itemId": 223020,
+            "timestamp": 55
+          },
+          {
+            "itemId": 226657,
+            "timestamp": 442
+          },
+          {
+            "itemId": 224633,
+            "timestamp": 648
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 652
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 931
+          }
+        ],
+        "goldAt10": 3500,
+        "csAt10": 0,
+        "levelAt10": 11,
+        "goldAt15": 6850,
+        "csAt15": 0
+      },
+      "5": {
+        "levelTimings": [
+          null,
+          null,
+          174,
+          174,
+          303,
+          303,
+          322,
+          425,
+          425,
+          426,
+          542,
+          542,
+          638,
+          639,
+          741,
+          896,
+          897,
+          912,
+          912,
+          912,
+          912,
+          1098,
+          1274
+        ],
+        "itemsBought": [
+          {
+            "itemId": 223158,
+            "timestamp": 24
+          },
+          {
+            "itemId": 226699,
+            "timestamp": 445
+          },
+          {
+            "itemId": 4017,
+            "timestamp": 657
+          }
+        ],
+        "goldAt10": 3602,
+        "csAt10": 0,
+        "levelAt10": 13,
+        "goldAt15": 7055,
+        "csAt15": 0
+      },
+      "6": {
+        "levelTimings": [
+          null,
+          null,
+          174,
+          174,
+          303,
+          303,
+          425,
+          425,
+          542,
+          542,
+          638,
+          741,
+          896,
+          1005,
+          1097,
+          1183,
+          1273
+        ],
+        "itemsBought": [
+          {
+            "itemId": 223158,
+            "timestamp": 49
+          },
+          {
+            "itemId": 226676,
+            "timestamp": 456
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 460
+          },
+          {
+            "itemId": 223036,
+            "timestamp": 655
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 906
+          },
+          {
+            "itemId": 223031,
+            "timestamp": 1023
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1025
+          },
+          {
+            "itemId": 226699,
+            "timestamp": 1046
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1115
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1121
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1206
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1209
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1212
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1214
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1311
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1312
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1363
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1365
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1368
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1372
+          },
+          {
+            "itemId": 2142,
+            "timestamp": 1375
+          }
+        ],
+        "goldAt10": 3863,
+        "csAt10": 0,
+        "levelAt10": 11,
+        "goldAt15": 6573,
+        "csAt15": 0
+      },
+      "7": {
+        "levelTimings": [
+          null,
+          null,
+          174,
+          174,
+          303,
+          303,
+          425,
+          425,
+          542,
+          542,
+          638,
+          741,
+          896,
+          1005,
+          1097,
+          1183,
+          1273
+        ],
+        "itemsBought": [
+          {
+            "itemId": 223158,
+            "timestamp": 13
+          },
+          {
+            "itemId": 223107,
+            "timestamp": 646
+          },
+          {
+            "itemId": 223190,
+            "timestamp": 915
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1013
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1015
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1017
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1022
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1193
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1196
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1198
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1202
+          },
+          {
+            "itemId": 223075,
+            "timestamp": 1355
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1356
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1359
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1361
+          }
+        ],
+        "goldAt10": 3750,
+        "csAt10": 0,
+        "levelAt10": 11,
+        "goldAt15": 6350,
+        "csAt15": 0
+      },
+      "8": {
+        "levelTimings": [
+          null,
+          null,
+          174,
+          174,
+          303,
+          303,
+          425,
+          425,
+          542,
+          542,
+          638,
+          741,
+          896,
+          1005,
+          1097,
+          1183,
+          1273
+        ],
+        "itemsBought": [
+          {
+            "itemId": 223158,
+            "timestamp": 20
+          },
+          {
+            "itemId": 223165,
+            "timestamp": 434
+          },
+          {
+            "itemId": 223190,
+            "timestamp": 669
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 675
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 907
+          },
+          {
+            "itemId": 223107,
+            "timestamp": 1051
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1119
+          },
+          {
+            "itemId": 3430,
+            "timestamp": 1194
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1357
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1360
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1364
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1370
+          }
+        ],
+        "goldAt10": 3500,
+        "csAt10": 0,
+        "levelAt10": 11,
+        "goldAt15": 6850,
+        "csAt15": 0
+      },
+      "9": {
+        "levelTimings": [
+          null,
+          null,
+          174,
+          174,
+          303,
+          303,
+          425,
+          425,
+          542,
+          542,
+          638,
+          741,
+          896,
+          1005,
+          1097,
+          1183
+        ],
+        "itemsBought": [
+          {
+            "itemId": 223008,
+            "timestamp": 37
+          },
+          {
+            "itemId": 223033,
+            "timestamp": 446
+          },
+          {
+            "itemId": 226333,
+            "timestamp": 664
+          },
+          {
+            "itemId": 226695,
+            "timestamp": 1015
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1016
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1023
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1026
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1190
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1195
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1197
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1200
+          }
+        ],
+        "goldAt10": 3853,
+        "csAt10": 0,
+        "levelAt10": 11,
+        "goldAt15": 7381,
+        "csAt15": 1
+      },
+      "10": {
+        "levelTimings": [
+          null,
+          null,
+          174,
+          174,
+          303,
+          303,
+          425,
+          425,
+          542,
+          542,
+          638,
+          741,
+          896,
+          1005,
+          1097,
+          1183
+        ],
+        "itemsBought": [
+          {
+            "itemId": 223158,
+            "timestamp": 50
+          },
+          {
+            "itemId": 226621,
+            "timestamp": 434
+          },
+          {
+            "itemId": 223107,
+            "timestamp": 673
+          },
+          {
+            "itemId": 222526,
+            "timestamp": 936
+          },
+          {
+            "itemId": 223190,
+            "timestamp": 1052
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1120
+          },
+          {
+            "itemId": 2143,
+            "timestamp": 1126
+          },
+          {
+            "itemId": 2144,
+            "timestamp": 1127
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1210
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1213
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1216
+          },
+          {
+            "itemId": 2143,
+            "timestamp": 1222
+          },
+          {
+            "itemId": 2144,
+            "timestamp": 1222
+          }
+        ],
+        "goldAt10": 3750,
+        "csAt10": 0,
+        "levelAt10": 11,
+        "goldAt15": 7100,
+        "csAt15": 0
+      },
+      "11": {
+        "levelTimings": [
+          null,
+          null,
+          174,
+          174,
+          303,
+          303,
+          425,
+          425,
+          542,
+          542,
+          638,
+          741,
+          896
+        ],
+        "itemsBought": [
+          {
+            "itemId": 223158,
+            "timestamp": 60
+          },
+          {
+            "itemId": 3430,
+            "timestamp": 441
+          },
+          {
+            "itemId": 223089,
+            "timestamp": 651
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 672
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 942
+          }
+        ],
+        "goldAt10": 3500,
+        "csAt10": 0,
+        "levelAt10": 11,
+        "goldAt15": 6850,
+        "csAt15": 0
+      },
+      "12": {
+        "levelTimings": [
+          null,
+          null,
+          174,
+          174,
+          303,
+          303,
+          425,
+          425,
+          542,
+          542,
+          638,
+          741,
+          896,
+          1005,
+          1097,
+          1183,
+          1273
+        ],
+        "itemsBought": [
+          {
+            "itemId": 220000,
+            "timestamp": 193
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 432
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 434
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 437
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 439
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 442
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 644
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 648
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 651
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 654
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 754
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 905
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 909
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 910
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1012
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1014
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1018
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1025
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1031
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1109
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1113
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1191
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1195
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1199
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1201
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1204
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1206
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1295
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1300
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1358
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1362
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1365
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1367
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1369
+          },
+          {
+            "itemId": 2142,
+            "timestamp": 1371
+          }
+        ],
+        "goldAt10": 4926,
+        "csAt10": 0,
+        "levelAt10": 11,
+        "goldAt15": 10111,
+        "csAt15": 1
+      },
+      "13": {
+        "levelTimings": [
+          null,
+          null,
+          174,
+          174,
+          303,
+          303,
+          425,
+          425,
+          542,
+          542,
+          638,
+          741,
+          896,
+          1005,
+          1097,
+          1183
+        ],
+        "itemsBought": [
+          {
+            "itemId": 223006,
+            "timestamp": 50
+          },
+          {
+            "itemId": 220002,
+            "timestamp": 454
+          },
+          {
+            "itemId": 223031,
+            "timestamp": 655
+          },
+          {
+            "itemId": 223033,
+            "timestamp": 1053
+          },
+          {
+            "itemId": 223095,
+            "timestamp": 1138
+          },
+          {
+            "itemId": 223032,
+            "timestamp": 1206
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1207
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1211
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1215
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1219
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1222
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1226
+          }
+        ],
+        "goldAt10": 4104,
+        "csAt10": 0,
+        "levelAt10": 11,
+        "goldAt15": 7587,
+        "csAt15": 0
+      },
+      "14": {
+        "levelTimings": [
+          null,
+          null,
+          174,
+          174,
+          303,
+          303,
+          425,
+          425,
+          542,
+          542,
+          638
+        ],
+        "itemsBought": [
+          {
+            "itemId": 223006,
+            "timestamp": 39
+          },
+          {
+            "itemId": 223124,
+            "timestamp": 646
+          }
+        ],
+        "goldAt10": 3250,
+        "csAt10": 0,
+        "levelAt10": 11,
+        "goldAt15": 5750,
+        "csAt15": 0
+      },
+      "15": {
+        "levelTimings": [
+          null,
+          null,
+          174,
+          174,
+          303,
+          303,
+          425,
+          425,
+          542,
+          542,
+          638
+        ],
+        "itemsBought": [
+          {
+            "itemId": 223111,
+            "timestamp": 51
+          },
+          {
+            "itemId": 223068,
+            "timestamp": 438
+          },
+          {
+            "itemId": 226664,
+            "timestamp": 652
+          }
+        ],
+        "goldAt10": 3380,
+        "csAt10": 2,
+        "levelAt10": 11,
+        "goldAt15": 5880,
+        "csAt15": 2
+      },
+      "16": {
+        "levelTimings": [
+          null,
+          null,
+          174,
+          174,
+          303,
+          303,
+          425,
+          425,
+          542,
+          542,
+          638
+        ],
+        "itemsBought": [
+          {
+            "itemId": 223158,
+            "timestamp": 26
+          },
+          {
+            "itemId": 226699,
+            "timestamp": 434
+          },
+          {
+            "itemId": 226694,
+            "timestamp": 659
+          }
+        ],
+        "goldAt10": 3250,
+        "csAt10": 0,
+        "levelAt10": 11,
+        "goldAt15": 5750,
+        "csAt15": 0
+      },
+      "17": {
+        "levelTimings": [
+          null,
+          null,
+          174,
+          174,
+          303,
+          303,
+          425,
+          425,
+          542,
+          542,
+          638,
+          741,
+          896,
+          1005,
+          1097,
+          1183
+        ],
+        "itemsBought": [
+          {
+            "itemId": 223020,
+            "timestamp": 27
+          },
+          {
+            "itemId": 223089,
+            "timestamp": 447
+          },
+          {
+            "itemId": 220004,
+            "timestamp": 646
+          },
+          {
+            "itemId": 223115,
+            "timestamp": 664
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 665
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 667
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 758
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 899
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 915
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 919
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1009
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1013
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1017
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1019
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1108
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1112
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1193
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1196
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1205
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1207
+          }
+        ],
+        "goldAt10": 5288,
+        "csAt10": 0,
+        "levelAt10": 11,
+        "goldAt15": 11959,
+        "csAt15": 1
+      },
+      "18": {
+        "levelTimings": [
+          null,
+          null,
+          174,
+          174,
+          303,
+          303,
+          425,
+          425,
+          542,
+          542,
+          638,
+          741,
+          896,
+          1005,
+          1097,
+          1183
+        ],
+        "itemsBought": [
+          {
+            "itemId": 223111,
+            "timestamp": 216
+          },
+          {
+            "itemId": 223074,
+            "timestamp": 454
+          },
+          {
+            "itemId": 223031,
+            "timestamp": 647
+          },
+          {
+            "itemId": 226333,
+            "timestamp": 1041
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1042
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1046
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1049
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1190
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1194
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1197
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1201
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1204
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1206
+          },
+          {
+            "itemId": 220000,
+            "timestamp": 1210
+          }
+        ],
+        "goldAt10": 3863,
+        "csAt10": 0,
+        "levelAt10": 11,
+        "goldAt15": 7391,
+        "csAt15": 1
+      }
+    },
+    "firstBloodAt": 82
+  }
+}

@@ -1,5 +1,6 @@
 import axios, { AxiosError } from 'axios';
 import { RiotMatchDto } from '../types/riot.js';
+import { RiotTimelineDto } from '../types/timeline.js';
 
 // Default base is americas; getBaseForMatchId will select correct regional host
 const DEFAULT_RIOT_API_BASE = 'https://americas.api.riotgames.com';
@@ -66,6 +67,20 @@ export class RiotApiClient {
       }
       
       throw error;
+    }
+  }
+
+  async getTimeline(matchId: string): Promise<RiotTimelineDto> {
+    try {
+      const base = this.getBaseForMatchId(matchId);
+      const url = `${base}/lol/match/v5/matches/${matchId}/timeline`;
+      const response = await axios.get<RiotTimelineDto>(url, {
+        headers: { 'X-Riot-Token': this.apiKey, 'User-Agent': 'LoLEsportsAnalyst/1.0' },
+        timeout: this.timeout,
+      });
+      return response.data;
+    } catch (error) {
+      throw this.mapError(error, `Timeline not found: ${matchId}`);
     }
   }
 

@@ -44,7 +44,7 @@ export function createMatchRoutes(config: MatchRouteConfig): Router {
       };
       return res.json(response);
     } catch (error) {
-      console.error(`Error fetching match ${matchId}:`, error);
+      console.error(`[MATCH] error  ${matchId}  ${error instanceof Error ? error.message : error}`);
 
       let statusCode = 500;
       let errorMessage = 'Internal server error';

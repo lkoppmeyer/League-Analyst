@@ -33,6 +33,10 @@ export type Persona = {
 // Globals that apply to every persona, loaded once at startup.
 const core = read(join(dir, 'core.md')).trim();
 const dataset = read(join(dir, 'dataset.md')).trim();
+export const preanalysisPrompt = read(join(dir, 'preanalysis.md')).trim();
+export const contextFilterPrompt = read(join(dir, 'contextfilter.md')).trim();
+export const timelineAnalysisPrompt = read(join(dir, 'timelineanalysis.md')).trim();
+export const laneScorePrompt = read(join(dir, 'lanescore.md')).trim();
 
 // Personas are loaded dynamically from the personas/ folder.
 const personas: Persona[] = readdirSync(personaDir)
@@ -56,10 +60,17 @@ export function listPersonas(): Array<{ id: string; label: string }> {
   return personas.map(({ id, label }) => ({ id, label }));
 }
 
-/** Assemble the full system prompt: global rules + dataset guide + chosen persona. */
-export function buildSystemPrompt(personaId: string, viewerContext = ''): string {
+/** Assemble the full system prompt: persona + core rules + dataset guide + optional context blocks. */
+export function buildSystemPrompt(
+  personaId: string,
+  champContext = '',
+  viewerContext = '',
+  preAnalysis = '',
+): string {
   const persona = personaById.get(personaId) ?? personas[0];
   const parts = [persona.body, core, dataset];
+  if (champContext.trim()) parts.push(champContext.trim());
   if (viewerContext.trim()) parts.push(viewerContext.trim());
+  if (preAnalysis.trim()) parts.push(`## Voranalyse dieses Spiels\n\n${preAnalysis.trim()}`);
   return parts.join('\n\n---\n\n');
 }

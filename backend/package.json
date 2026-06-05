@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "tsx watch src/main.ts",
     "build": "tsc && npm run copy:prompts",
-    "copy:prompts": "mkdir -p dist/prompts/personas && cp src/prompts/*.md dist/prompts/ && cp src/prompts/personas/*.md dist/prompts/personas/",
+    "copy:prompts": "mkdir -p dist/prompts/personas dist/data && cp src/prompts/*.md dist/prompts/ && cp src/prompts/personas/*.md dist/prompts/personas/ && cp src/data/champions.json src/data/items.json src/data/runes.json dist/data/",
     "start": "node dist/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,37 +1,40 @@
 import { FormEvent, useEffect, useRef, useState } from 'react';
-import { ChatMessage, Persona } from '../types';
+import { ChatMessage, ModelOption, Persona } from '../types';
 
 type Props = {
   messages: ChatMessage[];
   personas: Persona[];
-  onSend: (message: string, persona: string, modelMode: 'economy' | 'best') => void;
+  models: ModelOption[];
+  onSend: (message: string, persona: string, modelMode: string, useContextFilter: boolean) => void;
 };
 
-export default function ChatPanel({ messages, personas, onSend }: Props) {
+export default function ChatPanel({ messages, personas, models, onSend }: Props) {
   const [prompt, setPrompt] = useState('');
   const [persona, setPersona] = useState('');
-  const [modelMode, setModelMode] = useState<'economy' | 'best'>('economy');
+  const [modelMode, setModelMode] = useState('');
+  const [useContextFilter, setUseContextFilter] = useState(false);
   const historyRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    // Default to the first persona once they're loaded.
-    if (!persona && personas.length > 0) {
-      setPersona(personas[0].id);
-    }
+    if (!persona && personas.length > 0) setPersona(personas[0].id);
   }, [personas, persona]);
 
   useEffect(() => {
-    // Auto-scroll to bottom when messages change
-    const el = historyRef.current;
-    if (el) {
-      el.scrollTop = el.scrollHeight;
+    if (!modelMode && models.length > 0) {
+      const preferred = models.find((m) => m.id === 'balanced') ?? models[0];
+      setModelMode(preferred.id);
     }
+  }, [models, modelMode]);
+
+  useEffect(() => {
+    const el = historyRef.current;
+    if (el) el.scrollTop = el.scrollHeight;
   }, [messages]);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (!prompt.trim()) return;
-    onSend(prompt.trim(), persona, modelMode);
+    onSend(prompt.trim(), persona, modelMode, useContextFilter);
     setPrompt('');
   }
 
@@ -39,22 +42,30 @@ export default function ChatPanel({ messages, personas, onSend }: Props) {
     <section className="chat-panel">
       <div className="chat-header">Match Chat</div>
       <div className="chat-controls">
-        <label>
-          Persona:
+        <label className="ctrl-label">
+          Persona
           <select value={persona} onChange={(e) => setPersona(e.target.value)}>
             {personas.map((p) => (
-              <option key={p.id} value={p.id}>
-                {p.label}
-              </option>
+              <option key={p.id} value={p.id}>{p.label}</option>
             ))}
           </select>
         </label>
-        <label style={{ marginLeft: 12 }}>
-          Modell:
-          <select value={modelMode} onChange={(e) => setModelMode(e.target.value as any)}>
-            <option value="economy">Sparsames Modell</option>
-            <option value="best">Bestmögliches Modell</option>
+        <label className="ctrl-label">
+          Modell
+          <select value={modelMode} onChange={(e) => setModelMode(e.target.value)}>
+            {models.map((m) => (
+              <option key={m.id} value={m.id}>{m.label}</option>
+            ))}
           </select>
+        </label>
+        <label className="ctrl-label ctrl-label--inline">
+          <input
+            type="checkbox"
+            checked={useContextFilter}
+            onChange={(e) => setUseContextFilter(e.target.checked)}
+          />
+          Smart Context
+          <span className="info-icon" data-tooltip="Nutzt einen AI-Agent um nur relevante Daten für die Frage auszuwählen">ⓘ</span>
         </label>
       </div>
 

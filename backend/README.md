@@ -1,175 +1,239 @@
-# Backend - LoL E-Sports Team Explorer
+# Backend — LoL Match Analyst
 
-Backend API Server für Riot Match Daten mit Caching und Rate-Limit Handling.
+Express + TypeScript API-Server. Holt Matchdaten von Riot, reichert sie für den AI-Prompt an und schickt sie an OpenAI.
 
 ## Setup
 
-### 1. Environment Variable
 ```bash
-# Copy example and add your Riot Developer API Key
-cp .env.example .env
-```
-
-Edit `.env`:
-```
-RIOT_API_KEY=your_actual_riot_developer_api_key_here
-PORT=3001
-NODE_ENV=development
-```
-
-### 2. Get Riot API Key
-- Register at https://developer.riotgames.com/
-- Create a Development API key
-- The key resets every 24 hours (copy it again if needed)
-
-### 3. Install Dependencies
-```bash
+cp .env.example .env   # RIOT_API_KEY + OPENAI_API_KEY eintragen
 npm install
+npm run dev            # läuft auf :3001
 ```
 
-### 4. Start Development Server
-```bash
-npm run dev
-```
+## API-Endpunkte
 
-Server runs on `http://localhost:3001`
+| Methode | Pfad | Beschreibung |
+|---|---|---|
+| GET | `/api/match/:matchId` | Einzelnes Match (Riot-Daten → App-Format, gecacht) |
+| GET | `/api/summoner/account/:gameName/:tagLine?region=` | Riot-ID → puuid |
+| GET | `/api/summoner/history/:puuid?region=` | Letzte 20 SR-Matches als Summaries |
+| GET | `/api/ask/personas` | Verfügbare Personas für das Frontend-Dropdown |
+| GET | `/api/ask/models` | Verfügbare Modelle für das Frontend-Dropdown |
+| POST | `/api/ask/analyze` | Pre-Analyse-Agent — läuft automatisch beim Match-Load, wird gecacht |
+| POST | `/api/ask` | Chat — beantwortet Nutzerfragen zum Match |
+| POST | `/api/ask/debug/enriched` | Debug — gibt EnrichedMatchData als JSON zurück |
+| GET | `/health` | Healthcheck |
 
-## API Endpoints
+### POST /api/ask — Request Body
 
-### Get Match Data
-```
-GET /api/match/:matchId
-```
-
-**Example**:
-```bash
-curl "http://localhost:3001/api/match/EUW1_12345"
-```
-
-**Response**:
 ```json
 {
-  "success": true,
-  "data": {
-    "matchId": "EUW1_12345",
-    "blueTeam": {
-      "id": "100",
-      "name": "Blue Team",
-      "side": "blue",
-      "win": true,
-      "bans": [1, 2, 3],
-      "objectives": {
-        "baron": 1,
-        "dragon": 3,
-        "tower": 8,
-        "inhibitor": 1,
-        "riftHerald": 1
-      }
-    },
-    "redTeam": { /* ... */ },
-    "players": [
-      {
-        "id": "puuid...",
-        "name": "PlayerName",
-        "role": "Top",
-        "team": "blue",
-        "championName": "Garen",
-        "kills": 5,
-        "deaths": 2,
-        "assists": 10,
-        "goldEarned": 15000,
-        "minionsKilled": 250,
-        "items": [3044, 3111, 3157]
-      }
-      /* ... 9 more players */
-    ]
-  }
+  "userPrompt": "Wer war der MVP?",
+  "persona": "soloq",
+  "modelMode": "balanced",
+  "matchData": { "..." },
+  "summoner": "Giarth#0000",
+  "puuid": "optional-für-viewer-kontext",
+  "preAnalysis": "Ergebnis des letzten /analyze-Calls",
+  "useContextFilter": false
 }
 ```
 
-### Health Check
-```
-GET /health
-```
+`useContextFilter: true` → Ein zusätzlicher LLM-Call (gpt-4o-mini) filtert die Spieldaten auf die für die Frage relevante Teilmenge, bevor der Haupt-LLM antwortet. Spart Token bei sehr spezifischen Fragen.
 
-## Finding Test Match IDs
-
-Option 1: Use op.gg to find a player's recent match
-```
-https://op.gg/{region}/{playerName}
-```
-Copy a match ID from the URL or client library.
-
-Option 2: Format is typically:
-```
-{REGION1}_matchTimestamp_matchID
-```
-Examples:
-- EUW1_1234567890_ABCDEF
-- NA1_1234567890_GHIJKL
-- KR_1234567890_MNOPQR
-
-## Architecture
+## Datei-Struktur
 
 ```
 src/
-├── main.ts              # Express server & setup
+├── main.ts                     Express-Setup, Route-Mounting
 ├── routes/
-│   └── matchRoutes.ts   # API endpoints
+│   ├── matchRoutes.ts          GET /api/match/:id
+│   ├── summonerRoutes.ts       GET /api/summoner/…
+│   └── aiRoutes.ts             GET+POST /api/ask/…  · Modell-Registry · Context-Filter
 ├── data/
-│   ├── riotApiClient.ts # Riot API wrapper
-│   └── cache.ts         # Cache & RateLimiter
+│   ├── riotApiClient.ts        Riot API-Client (match + timeline + account + history)
+│   ├── diskCache.ts            Disk-Cache (cache/*.json, überlebt Neustarts)
+│   ├── championDb.ts           Lädt champions.json + items.json + runes.json
+│   │                           extractChampionContext(entry, role, others, items)
+│   │                           extractItemContext(itemIds)  ← neu: item general context
+│   ├── champions.json          Champion-Datenbank (manuell pflegen, s.u.)
+│   ├── items.json              Item-ID → Name + Key + general context
+│   └── runes.json              Rune-Datenbank (auto-generiert)
 ├── domain/
-│   └── matchMapper.ts   # Map Riot -> App data
+│   ├── matchMapper.ts          RiotMatchDto → MatchData
+│   ├── matchService.ts         getOrFetchMatch (3-stufiger Cache: Memory→Disk→API)
+│   ├── timelineProcessor.ts    RiotTimelineDto → TimelineInsights
+│   │                           Item-Kaufzeitpunkte in Sekunden, Gold/CS/Level@10/15
+│   ├── matchEnricher.ts        MatchData → EnrichedMatchData für AI
+│   │                           Items mit boughtAt-Minute, firstBlood/Tower/Dragon/…
+│   └── conversationLogger.ts   Loggt Q&A nach logs/<matchId>.log
+├── prompts/
+│   ├── promptLoader.ts         buildSystemPrompt + preanalysisPrompt + contextFilterPrompt
+│   ├── core.md                 Universelle Output-Regeln (immer injiziert)
+│   ├── dataset.md              Erklärung des EnrichedMatchData-Formats
+│   ├── preanalysis.md          Pre-Analyse-Agent (konfigurierbar, s.u.)
+│   ├── contextfilter.md        Context-Filter-Agent (frage-spezifische Datenselektion)
+│   └── personas/               Dynamisch geladene Persona-Dateien
+│       ├── soloq.md
+│       └── ...
 └── types/
-    ├── riot.ts          # Riot API types
-    └── app.ts           # App types
+    ├── riot.ts                 Riot API-Typen
+    ├── timeline.ts             Timeline + ParticipantTimeline
+    └── app.ts                  App-Typen (MatchData, Player, …)
 ```
 
-## Features
+## AI-Pipeline: Pre-Analyse
 
-- ✅ Caching (1 hour TTL)
-- ✅ Rate limiting (20 req/sec, 100 req/2min)
-- ✅ Error handling (404, 429, 401, timeout)
-- ✅ TypeScript with strict types
-- ✅ CORS enabled for frontend
+Läuft automatisch wenn ein Match geladen wird. Ergebnis wird gecacht (`cache/preanalysis_<matchId>.json`).
 
-## Rate Limits
+```
+POST /api/ask/analyze
+         │
+         ▼
+   Cache-Hit? ──ja──→ return cached
+         │ nein
+         ▼
+  enrichMatchData()            ← Items mit boughtAt, firstBlood/Tower/…
+         │
+  buildChampionContextBlock()  ← Champion + Matchup-Infos aus champions.json
+         │
+  [LLM: preanalysis.md]        ← Konfigurierbar: Muster-Erkennung, Kategorien
+         │
+  writeDiskCache()
+         │
+         ▼
+  analysis (Text)
+```
 
-Development API keys have these limits:
-- **20 requests per second**
-- **100 requests per 2 minutes**
+**preanalysis.md anpassen:** Die Datei kann frei bearbeitet werden. Beispiele für konfigurierte Erkennungen:
+- "Erkenne vollständig AD- oder AP-Kompositions"
+- "Erkenne Armor- oder MR-Stacking"
+- "Erkenne Engage- vs Poke-Kompositions"
 
-The backend enforces these limits and returns:
-- `429 Too Many Requests` when exceeded
-- `Retry-After` header with backoff time
+## AI-Pipeline: Chat
 
-## Build & Run Production
+```
+POST /api/ask (userPrompt + matchData + preAnalysis)
+         │
+         ▼
+  enrichMatchData()
+         │
+         ├── useContextFilter=true?
+         │     │
+         │     ▼
+         │   [LLM: contextfilter.md, gpt-4o-mini]
+         │   Frage-spezifischer Daten-Subset
+         │     │
+         │     └──→ contextForAnswer (gefiltert oder fallback: voll)
+         │
+         ├── useContextFilter=false?
+         │     └──→ contextForAnswer = vollständige enriched Daten
+         │
+         ▼
+  buildSystemPrompt(persona, champContext, viewerContext, preAnalysis)
+         │
+  [LLM: gewähltes Modell]
+         │
+  logConversation()
+         │
+         ▼
+  Antwort-Text
+```
+
+## System-Prompt-Aufbau
+
+```
+[Persona aus personas/*.md]
+---
+[core.md — Output-Regeln]
+---
+[dataset.md — Datenformat-Erklärung]
+---
+[Champion-Kontext-Block — aus champions.json + game state]
+  Je Spieler: general + role_<lane> + matchup_<gegner> + item_<key> + custom attrs
+---
+[Item-Kontext — aus items.json general-Felder]
+  Je Item mit general-Feld: "Trinity Force: offensiv; Fighter/Bruiser; …"
+---
+[Viewer-Kontext — wenn summoner/puuid bekannt]
+---
+[Pre-Analyse — wenn vorhanden]
+```
+
+User-Message: `Frage: <prompt>\n\nSpieldaten: <contextForAnswer JSON>`
+
+## EnrichedMatchData — was der AI-Context enthält
+
+- Bans als Champion-Namen
+- Items als `[{ name, boughtAt? }]` — `boughtAt` ist die Kaufminute aus dem Timeline
+- Gold formatiert (14.2k), CS/min berechnet
+- `championContext[]` pro Spieler (aus Champion-DB + items.json general)
+- `firstBlood`, `firstTower`, `firstDragon`, `firstBaron`, `firstHerald` (falls Timeline vorhanden)
+
+## Champions-Datenbank pflegen
+
+`src/data/champions.json` — flaches Key-Value-System. `id`, `name`, `attack_type` und `tags` kommen aus der API. Alles andere ist manueller Kontext:
+
+```json
+{
+  "id": 61,
+  "name": "Orianna",
+  "attack_type": "ranged",
+  "tags": ["Mage", "Support"],
+  "general": "Immer injiziert wenn Orianna im Spiel ist.",
+  "role_mid": "Injiziert wenn Orianna Mid gespielt wird.",
+  "matchup_zed": "Injiziert wenn Zed auch im Spiel ist.",
+  "item_lich_bane": "Injiziert wenn Orianna Lich Bane gebaut hat.",
+  "item_core_zhonyas_hourglass": "Injiziert IMMER wenn Orianna im Spiel ist.",
+  "weakness": "Verliert gegen frühe All-ins und Disengage-Komps.",
+  "draft_priority": "S-Tier Teamfight-Enabler, früh banen oder erstzugreifen"
+}
+```
+
+| Key | Wann injiziert |
+|---|---|
+| `general` | Immer wenn Champion im Spiel ist |
+| `role_<lane>` | Wenn Champion diese Lane spielt |
+| `matchup_<champname>` | Wenn beide Champions gleichzeitig im Spiel sind |
+| `item_<key>` | Wenn Champion dieses Item **gebaut hat** |
+| `item_core_<key>` | **Immer** wenn Champion im Spiel ist |
+| **Beliebige andere String-Keys** | **Immer injiziert** als `Label: Wert` |
+
+Beliebige eigene Attribute wie `weakness`, `draft_priority`, `playstyle`, `win_condition` etc. werden automatisch als `{Label}: {Wert}` in den Kontext injiziert — ohne Code-Änderung.
+
+## Items-Datenbank pflegen
+
+`src/data/items.json` — wie Champions, aber nur `general` als immer-injizierter Kontext:
+
+```json
+{
+  "id": 3078,
+  "name": "Trinity Force",
+  "key": "trinity_force",
+  "general": "offensiv; Fighter/Bruiser; Spellblade; HP+AD+AS+AH"
+}
+```
+
+`general` wird injiziert wenn ein Spieler dieses Item im Build hat.
+
+## Modelle anpassen
+
+In `src/routes/aiRoutes.ts` → `MODELS`-Array:
+
+```typescript
+const MODELS = [
+  { id: 'economy',  label: 'Günstig (GPT-3.5 Turbo)',      modelId: 'gpt-3.5-turbo' },
+  { id: 'balanced', label: 'Preis/Leistung (GPT-4o mini)', modelId: 'gpt-4o-mini'   },
+  { id: 'best',     label: 'Bestes Modell (GPT-4.1)',       modelId: 'gpt-4.1'       },
+];
+```
+
+Context-Filter verwendet immer `gpt-4o-mini` unabhängig von der Modellwahl.
+
+## Game Data initialisieren
 
 ```bash
-npm run build
-npm start
+python3 scripts/fetch_game_data.py
 ```
 
-Output will be in `dist/`
-
-## Troubleshooting
-
-**"RIOT_API_KEY not set"**
-- Create `.env` file with your API key
-- Key resets daily; get a new one if old
-
-**"Match not found" (404)**
-- Verify match ID is valid
-- Check it's from the correct region
-- Match must be completed (post-game)
-
-**"Rate limited" (429)**
-- Wait before making more requests
-- Check Retry-After header for backoff duration
-- Reduce request frequency
-
-**"Invalid API key" (401/403)**
-- Verify key in `.env` file
-- Get a fresh key from developer.riotgames.com
-- Check it's a personal/development key (not production)
+Holt Name, ID, attack_type, Riot-Tags aus Data Dragon. Kein manueller Kontext, keine general-Felder. Die sind danach manuell zu pflegen. Bestehende JSONs werden nach `src/data/old/` (mit Timestamp) gesichert.

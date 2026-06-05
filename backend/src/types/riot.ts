@@ -76,6 +76,7 @@ export interface RiotParticipant {
   totalDamageTaken: number;
   totalHeal: number;
   totalMinionsKilled: number;
+  doubleKills: number;
   tripleKills: number;
   trueDamageDealt: number;
   trueDamageDealtToChampions: number;
@@ -87,6 +88,14 @@ export interface RiotParticipant {
   wardsPlaced: number;
   win: boolean;
   teamPosition: string; // TOP, JUNGLE, MIDDLE, ADC, SUPPORT
+  perks?: {
+    statPerks: { defense: number; flex: number; offense: number };
+    styles: Array<{
+      description: string; // "primaryStyle" | "subStyle"
+      selections: Array<{ perk: number; var1: number; var2: number; var3: number }>;
+      style: number; // rune tree ID
+    }>;
+  };
 }
 
 export interface RiotTeam {

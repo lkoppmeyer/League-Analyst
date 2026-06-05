@@ -1,3 +1,17 @@
+export type ItemData = {
+  id: number;
+  name: string;
+  image_url?: string;
+  stats?: { label: string; value: string }[];
+  description?: string;
+};
+
+export type ResolvedRune = {
+  id: number;
+  name: string;
+  iconUrl: string;
+};
+
 export type Player = {
   id: string;
   name: string;
@@ -6,16 +20,32 @@ export type Player = {
   portraitUrl?: string;
   championName?: string;
   championId?: number;
+  champLevel?: number;
   kills?: number;
   deaths?: number;
   assists?: number;
   goldEarned?: number;
+  minionsKilled?: number;
+  items?: number[];
+  runes?: {
+    keystone?: ResolvedRune;
+    primaryTree?: ResolvedRune;
+    secondaryTree?: ResolvedRune;
+  };
 };
 
 export type TeamInfo = {
   id: string;
   name: string;
   side: 'blue' | 'red';
+  win?: boolean;
+  objectives?: {
+    baron: number;
+    dragon: number;
+    tower: number;
+    inhibitor: number;
+    riftHerald: number;
+  };
 };
 
 export type MatchData = {
@@ -23,6 +53,8 @@ export type MatchData = {
   blueTeam: TeamInfo;
   redTeam: TeamInfo;
   players: Player[];
+  gameDuration?: number;
+  queueId?: number;
 };
 
 export type ChatMessage = {
@@ -32,6 +64,11 @@ export type ChatMessage = {
 };
 
 export type Persona = {
+  id: string;
+  label: string;
+};
+
+export type ModelOption = {
   id: string;
   label: string;
 };

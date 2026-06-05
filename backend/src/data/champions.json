@@ -1,0 +1,1064 @@
+{
+  "_schema": {
+    "_description": "Champion-Datenbank fuer AI-Kontext-Injection. Jeder Champion-Eintrag ist ein freies Key-Value Objekt. Nur 'id' und 'name' sind Pflicht. Alle anderen Felder sind optional — fehlende Felder bedeuten weniger AI-Kontext, nicht Fehler. 'attack_type' und 'tags' kommen aus der Riot API und sollten nicht manuell veraendert werden.",
+    "_keys": {
+      "id": "Champion-ID gemaess Riot API (integer)",
+      "name": "Anzeigename des Champions (string)",
+      "attack_type": "Angriffstyp aus Riot API: 'melee' oder 'ranged' (attackrange >= 350 = ranged)",
+      "tags": "Riot-Klassen-Tags (array, aus Riot API). Moegliche Werte: Fighter, Tank, Mage, Assassin, Marksman, Support",
+      "general": "Allgemeiner Freitext-Kontext. Immer injected wenn der Champion im Spiel ist, unabhaengig von Lane oder Items.",
+      "role_top": "Kontext spezifisch fuer diesen Champion auf der Top-Lane.",
+      "role_jungle": "Kontext spezifisch fuer diesen Champion als Jungler.",
+      "role_mid": "Kontext spezifisch fuer diesen Champion auf der Mid-Lane.",
+      "role_adc": "Kontext spezifisch fuer diesen Champion als ADC.",
+      "role_support": "Kontext spezifisch fuer diesen Champion als Support.",
+      "matchup_<champname>": "Kontext wenn BEIDE Champions gleichzeitig im Spiel sind. champname ist der Riot-Name lowercase, Leerzeichen als Unterstrich. Beispiele: matchup_zed, matchup_miss_fortune, matchup_lee_sin",
+      "item_<itemkey>": "Kontext injected wenn der Champion dieses Item GEBAUT hat. itemkey kommt aus items.json (.key Feld). Beispiele: item_trinity_force, item_zhonyas_hourglass",
+      "item_core_<itemkey>": "Kontext der IMMER injected wird wenn der Champion im Spiel ist, egal ob das Item gebaut wurde oder nicht. Gedacht fuer: Items die so fundamental fuer das Spielverstaendnis des Champions sind dass der Kontext immer relevant ist — z.B. 'dieser Champion sollte nie X kaufen', 'X ist der wichtigste Powerspike', 'ohne X funktioniert das Kit nicht'. itemkey kommt aus items.json (.key Feld). Beispiele: item_core_trinity_force, item_core_sunfire_aegis"
+    }
+  },
+  "champions": [
+    {
+      "id": 266,
+      "name": "Aatrox",
+      "attack_type": "melee",
+      "tags": ["Fighter"]
+    },
+    {
+      "id": 103,
+      "name": "Ahri",
+      "attack_type": "ranged",
+      "general": "Draft_info: Ist follow up champ, braucht initialen cc oder engage vom Team;spielt ungerne gegen Tanky champions",
+      "tags": ["Mage", "Assassin"]
+    },
+    {
+      "id": 84,
+      "name": "Akali",
+      "attack_type": "melee",
+      "tags": ["Assassin"]
+    },
+    {
+      "id": 166,
+      "name": "Akshan",
+      "attack_type": "ranged",
+      "tags": ["Marksman", "Assassin"]
+    },
+    {
+      "id": 12,
+      "name": "Alistar",
+      "attack_type": "melee",
+      "tags": ["Tank", "Support"]
+    },
+    {
+      "id": 799,
+      "name": "Ambessa",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Assassin"]
+    },
+    {
+      "id": 32,
+      "name": "Amumu",
+      "attack_type": "melee",
+      "tags": ["Tank", "Support"]
+    },
+    {
+      "id": 34,
+      "name": "Anivia",
+      "attack_type": "ranged",
+      "tags": ["Mage"]
+    },
+    {
+      "id": 1,
+      "name": "Annie",
+      "attack_type": "ranged",
+      "tags": ["Mage", "Support"]
+    },
+    {
+      "id": 523,
+      "name": "Aphelios",
+      "attack_type": "ranged",
+      "tags": ["Marksman"]
+    },
+    {
+      "id": 22,
+      "name": "Ashe",
+      "attack_type": "ranged",
+      "tags": ["Marksman", "Support"]
+    },
+    {
+      "id": 136,
+      "name": "Aurelion Sol",
+      "attack_type": "ranged",
+      "tags": ["Mage"]
+    },
+    {
+      "id": 893,
+      "name": "Aurora",
+      "attack_type": "ranged",
+      "tags": ["Mage", "Assassin"]
+    },
+    {
+      "id": 268,
+      "name": "Azir",
+      "attack_type": "ranged",
+      "tags": ["Mage", "Marksman"]
+    },
+    {
+      "id": 432,
+      "name": "Bard",
+      "general": "Draft_info: spielt gerne gegen immobile champs die mit ult catchen kann, braucht follow up vom Team; hat schlechten peel aber ist ansonsten sehr flexibel",
+      "attack_type": "ranged",
+      "tags": ["Support", "Mage"]
+    },
+    {
+      "id": 200,
+      "name": "Bel'Veth",
+      "attack_type": "melee",
+      "tags": ["Fighter"]
+    },
+    {
+      "id": 53,
+      "name": "Blitzcrank",
+      "attack_type": "melee",
+      "tags": ["Tank", "Support"]
+    },
+    {
+      "id": 63,
+      "name": "Brand",
+      "general": "Draft_info: low mobility dps champ, spielt gerne gegen low range low mobility;",
+      "attack_type": "ranged",
+      "tags": ["Mage", "Support"]
+    },
+    {
+      "id": 201,
+      "name": "Braum",
+      "attack_type": "melee",
+      "tags": ["Tank", "Support"]
+    },
+    {
+      "id": 233,
+      "name": "Briar",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Assassin"]
+    },
+    {
+      "id": 51,
+      "name": "Caitlyn",
+      "general": "Draft_info: Ist ein high range, follow-up champ, braucht ein team was space erschafft; spielt ungerne gegen tanks und hard engage",
+      "attack_type": "ranged",
+      "tags": ["Marksman"]
+    },
+    {
+      "id": 164,
+      "name": "Camille",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Assassin"]
+    },
+    {
+      "id": 69,
+      "name": "Cassiopeia",
+      "attack_type": "ranged",
+      "tags": ["Mage"]
+    },
+    {
+      "id": 31,
+      "name": "Cho'Gath",
+      "attack_type": "melee",
+      "tags": ["Tank", "Mage"]
+    },
+    {
+      "id": 42,
+      "name": "Corki",
+      "attack_type": "ranged",
+      "tags": ["Marksman", "Mage"]
+    },
+    {
+      "id": 122,
+      "name": "Darius",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Tank"]
+    },
+    {
+      "id": 131,
+      "name": "Diana",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Assassin"]
+    },
+    {
+      "id": 36,
+      "name": "Dr. Mundo",
+      "attack_type": "melee",
+      "tags": ["Tank", "Fighter"]
+    },
+    {
+      "id": 119,
+      "name": "Draven",
+      "attack_type": "ranged",
+      "tags": ["Marksman"]
+    },
+    {
+      "id": 245,
+      "name": "Ekko",
+      "attack_type": "melee",
+      "tags": ["Assassin", "Mage"]
+    },
+    {
+      "id": 60,
+      "name": "Elise",
+      "attack_type": "ranged",
+      "tags": ["Assassin", "Mage"]
+    },
+    {
+      "id": 28,
+      "name": "Evelynn",
+      "attack_type": "melee",
+      "tags": ["Assassin", "Mage"]
+    },
+    {
+      "id": 81,
+      "name": "Ezreal",
+      "attack_type": "ranged",
+      "tags": ["Marksman", "Mage"]
+    },
+    {
+      "id": 9,
+      "name": "Fiddlesticks",
+      "attack_type": "ranged",
+      "tags": ["Mage", "Support"]
+    },
+    {
+      "id": 114,
+      "name": "Fiora",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Assassin"]
+    },
+    {
+      "id": 105,
+      "name": "Fizz",
+      "attack_type": "melee",
+      "tags": ["Assassin", "Fighter"]
+    },
+    {
+      "id": 3,
+      "name": "Galio",
+      "attack_type": "melee",
+      "tags": ["Tank", "Mage"]
+    },
+    {
+      "id": 41,
+      "name": "Gangplank",
+      "attack_type": "melee",
+      "tags": ["Fighter"]
+    },
+    {
+      "id": 86,
+      "name": "Garen",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Tank"]
+    },
+    {
+      "id": 150,
+      "name": "Gnar",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Tank"]
+    },
+    {
+      "id": 79,
+      "name": "Gragas",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Mage"]
+    },
+    {
+      "id": 104,
+      "name": "Graves",
+      "attack_type": "ranged",
+      "tags": ["Marksman"]
+    },
+    {
+      "id": 887,
+      "name": "Gwen",
+      "attack_type": "melee",
+      "tags": ["Fighter"]
+    },
+    {
+      "id": 120,
+      "name": "Hecarim",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Tank"]
+    },
+    {
+      "id": 74,
+      "name": "Heimerdinger",
+      "attack_type": "ranged",
+      "tags": ["Mage", "Support"]
+    },
+    {
+      "id": 910,
+      "name": "Hwei",
+      "attack_type": "ranged",
+      "tags": ["Mage", "Support"]
+    },
+    {
+      "id": 420,
+      "name": "Illaoi",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Tank"]
+    },
+    {
+      "id": 39,
+      "name": "Irelia",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Assassin"]
+    },
+    {
+      "id": 427,
+      "name": "Ivern",
+      "attack_type": "ranged",
+      "tags": ["Support", "Mage"]
+    },
+    {
+      "id": 40,
+      "name": "Janna",
+      "attack_type": "ranged",
+      "tags": ["Support", "Mage"]
+    },
+    {
+      "id": 59,
+      "name": "Jarvan IV",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Tank"]
+    },
+    {
+      "id": 24,
+      "name": "Jax",
+      "attack_type": "melee",
+      "tags": ["Fighter"]
+    },
+    {
+      "id": 126,
+      "name": "Jayce",
+      "attack_type": "melee",
+      "general": "Draft_info: Ist high range, spielt gerne poke; schwach gegen Engage und gut gegen squishies",
+      "tags": ["Fighter", "Marksman"]
+    },
+    {
+      "id": 202,
+      "name": "Jhin",
+      "attack_type": "ranged",
+      "tags": ["Marksman", "Mage"]
+    },
+    {
+      "id": 222,
+      "name": "Jinx",
+      "attack_type": "ranged",
+      "tags": ["Marksman"]
+    },
+    {
+      "id": 897,
+      "name": "K'Sante",
+      "attack_type": "melee",
+      "tags": ["Tank", "Fighter"]
+    },
+    {
+      "id": 145,
+      "name": "Kai'Sa",
+      "attack_type": "ranged",
+      "tags": ["Marksman", "Mage"]
+    },
+    {
+      "id": 429,
+      "name": "Kalista",
+      "attack_type": "ranged",
+      "tags": ["Marksman"]
+    },
+    {
+      "id": 43,
+      "name": "Karma",
+      "attack_type": "ranged",
+      "tags": ["Mage", "Support"]
+    },
+    {
+      "id": 30,
+      "name": "Karthus",
+      "attack_type": "ranged",
+      "tags": ["Mage"]
+    },
+    {
+      "id": 38,
+      "name": "Kassadin",
+      "attack_type": "melee",
+      "tags": ["Assassin", "Mage"]
+    },
+    {
+      "id": 55,
+      "name": "Katarina",
+      "attack_type": "melee",
+      "tags": ["Assassin", "Mage"]
+    },
+    {
+      "id": 10,
+      "name": "Kayle",
+      "attack_type": "melee",
+      "tags": ["Mage", "Marksman"]
+    },
+    {
+      "id": 141,
+      "name": "Kayn",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Assassin"]
+    },
+    {
+      "id": 85,
+      "name": "Kennen",
+      "attack_type": "ranged",
+      "tags": ["Mage"]
+    },
+    {
+      "id": 121,
+      "name": "Kha'Zix",
+      "attack_type": "melee",
+      "tags": ["Assassin"]
+    },
+    {
+      "id": 203,
+      "name": "Kindred",
+      "attack_type": "ranged",
+      "tags": ["Marksman"]
+    },
+    {
+      "id": 240,
+      "name": "Kled",
+      "attack_type": "melee",
+      "tags": ["Fighter"]
+    },
+    {
+      "id": 96,
+      "name": "Kog'Maw",
+      "attack_type": "ranged",
+      "tags": ["Marksman", "Mage"]
+    },
+    {
+      "id": 7,
+      "name": "LeBlanc",
+      "attack_type": "ranged",
+      "tags": ["Assassin", "Mage"]
+    },
+    {
+      "id": 64,
+      "name": "Lee Sin",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Assassin"]
+    },
+    {
+      "id": 89,
+      "name": "Leona",
+      "attack_type": "melee",
+      "tags": ["Tank", "Support"]
+    },
+    {
+      "id": 876,
+      "name": "Lillia",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Mage"]
+    },
+    {
+      "id": 127,
+      "name": "Lissandra",
+      "attack_type": "ranged",
+      "tags": ["Mage"]
+    },
+    {
+      "id": 236,
+      "name": "Lucian",
+      "attack_type": "ranged",
+      "tags": ["Marksman", "Assassin"]
+    },
+    {
+      "id": 117,
+      "name": "Lulu",
+      "attack_type": "ranged",
+      "tags": ["Support", "Mage"]
+    },
+    {
+      "id": 99,
+      "name": "Lux",
+      "attack_type": "ranged",
+      "tags": ["Mage", "Support"]
+    },
+    {
+      "id": 54,
+      "name": "Malphite",
+      "attack_type": "melee",
+      "tags": ["Tank", "Mage"]
+    },
+    {
+      "id": 90,
+      "name": "Malzahar",
+      "attack_type": "ranged",
+      "tags": ["Mage"]
+    },
+    {
+      "id": 57,
+      "name": "Maokai",
+      "attack_type": "melee",
+      "tags": ["Tank", "Support"]
+    },
+    {
+      "id": 11,
+      "name": "Master Yi",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Assassin"]
+    },
+    {
+      "id": 800,
+      "name": "Mel",
+      "attack_type": "ranged",
+      "tags": ["Mage", "Support"]
+    },
+    {
+      "id": 902,
+      "name": "Milio",
+      "attack_type": "ranged",
+      "tags": ["Support", "Mage"]
+    },
+    {
+      "id": 21,
+      "name": "Miss Fortune",
+      "attack_type": "ranged",
+      "tags": ["Marksman", "Mage"]
+    },
+    {
+      "id": 82,
+      "name": "Mordekaiser",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Mage"]
+    },
+    {
+      "id": 25,
+      "name": "Morgana",
+      "attack_type": "ranged",
+      "tags": ["Support", "Mage"]
+    },
+    {
+      "id": 950,
+      "name": "Naafiri",
+      "attack_type": "melee",
+      "tags": ["Assassin", "Fighter"]
+    },
+    {
+      "id": 267,
+      "name": "Nami",
+      "general": "Draft_info: Lane dominanter Enchanter;spielt gerne mit burst champions; spielt ungerne gegen dive/assasins wegen schlechtem peel",
+      "attack_type": "ranged",
+      "tags": ["Support", "Mage"]
+    },
+    {
+      "id": 75,
+      "name": "Nasus",
+      "attack_type": "melee",
+      "general": "Draft_info: Braucht ein Team mit waveclear; spielt ungern gegen Kite, Mobility und hohen DPS;",
+      "tags": ["Fighter", "Tank"]
+    },
+    {
+      "id": 111,
+      "name": "Nautilus",
+      "attack_type": "melee",
+      "tags": ["Tank", "Support"]
+    },
+    {
+      "id": 518,
+      "name": "Neeko",
+      "attack_type": "ranged",
+      "tags": ["Mage", "Support"]
+    },
+    {
+      "id": 76,
+      "name": "Nidalee",
+      "attack_type": "ranged",
+      "tags": ["Assassin", "Mage"]
+    },
+    {
+      "id": 895,
+      "name": "Nilah",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Assassin"]
+    },
+    {
+      "id": 56,
+      "name": "Nocturne",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Assassin"]
+    },
+    {
+      "id": 20,
+      "name": "Nunu & Willump",
+      "attack_type": "melee",
+      "tags": ["Tank", "Mage"]
+    },
+    {
+      "id": 2,
+      "name": "Olaf",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Tank"]
+    },
+    {
+      "id": 61,
+      "name": "Orianna",
+      "attack_type": "ranged",
+      "tags": ["Mage", "Support"]
+    },
+    {
+      "id": 516,
+      "name": "Ornn",
+      "attack_type": "melee",
+      "tags": ["Tank"]
+    },
+    {
+      "id": 80,
+      "name": "Pantheon",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Assassin"]
+    },
+    {
+      "id": 78,
+      "name": "Poppy",
+      "attack_type": "melee",
+      "tags": ["Tank", "Fighter"]
+    },
+    {
+      "id": 555,
+      "name": "Pyke",
+      "attack_type": "melee",
+      "tags": ["Support", "Assassin"]
+    },
+    {
+      "id": 246,
+      "name": "Qiyana",
+      "attack_type": "melee",
+      "general": "Draft_info: high mobility burst champ ohne cc; spielt gerne mit Dive; spielt ungerne gegen Peel und disengage",
+      "tags": ["Assassin"]
+    },
+    {
+      "id": 133,
+      "name": "Quinn",
+      "attack_type": "ranged",
+      "tags": ["Marksman", "Assassin"]
+    },
+    {
+      "id": 497,
+      "name": "Rakan",
+      "attack_type": "melee",
+      "tags": ["Support"]
+    },
+    {
+      "id": 33,
+      "name": "Rammus",
+      "attack_type": "melee",
+      "tags": ["Tank"]
+    },
+    {
+      "id": 421,
+      "name": "Rek'Sai",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Tank"]
+    },
+    {
+      "id": 526,
+      "name": "Rell",
+      "attack_type": "melee",
+      "tags": ["Tank", "Support"]
+    },
+    {
+      "id": 888,
+      "name": "Renata Glasc",
+      "attack_type": "ranged",
+      "tags": ["Support", "Mage"]
+    },
+    {
+      "id": 58,
+      "name": "Renekton",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Tank"]
+    },
+    {
+      "id": 107,
+      "name": "Rengar",
+      "attack_type": "melee",
+      "tags": ["Assassin", "Fighter"]
+    },
+    {
+      "id": 92,
+      "name": "Riven",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Assassin"]
+    },
+    {
+      "id": 68,
+      "name": "Rumble",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Mage"]
+    },
+    {
+      "id": 13,
+      "name": "Ryze",
+      "attack_type": "ranged",
+      "tags": ["Mage"]
+    },
+    {
+      "id": 360,
+      "name": "Samira",
+      "attack_type": "ranged",
+      "tags": ["Marksman", "Assassin"]
+    },
+    {
+      "id": 113,
+      "name": "Sejuani",
+      "attack_type": "melee",
+      "tags": ["Tank"]
+    },
+    {
+      "id": 235,
+      "name": "Senna",
+      "attack_type": "ranged",
+      "tags": ["Support", "Marksman"]
+    },
+    {
+      "id": 147,
+      "name": "Seraphine",
+      "attack_type": "ranged",
+      "tags": ["Support", "Mage"]
+    },
+    {
+      "id": 875,
+      "name": "Sett",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Tank"]
+    },
+    {
+      "id": 35,
+      "name": "Shaco",
+      "attack_type": "melee",
+      "tags": ["Assassin"]
+    },
+    {
+      "id": 98,
+      "name": "Shen",
+      "attack_type": "melee",
+      "tags": ["Tank"]
+    },
+    {
+      "id": 102,
+      "name": "Shyvana",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Tank"]
+    },
+    {
+      "id": 27,
+      "name": "Singed",
+      "attack_type": "melee",
+      "tags": ["Tank", "Mage"]
+    },
+    {
+      "id": 14,
+      "name": "Sion",
+      "attack_type": "melee",
+      "tags": ["Tank", "Fighter"]
+    },
+    {
+      "id": 15,
+      "name": "Sivir",
+      "attack_type": "ranged",
+      "tags": ["Marksman"]
+    },
+    {
+      "id": 72,
+      "name": "Skarner",
+      "attack_type": "melee",
+      "tags": ["Tank", "Fighter"]
+    },
+    {
+      "id": 901,
+      "name": "Smolder",
+      "attack_type": "ranged",
+      "tags": ["Marksman", "Mage"]
+    },
+    {
+      "id": 37,
+      "name": "Sona",
+      "attack_type": "ranged",
+      "tags": ["Support", "Mage"]
+    },
+    {
+      "id": 16,
+      "name": "Soraka",
+      "attack_type": "ranged",
+      "tags": ["Support", "Mage"]
+    },
+    {
+      "id": 50,
+      "name": "Swain",
+      "attack_type": "ranged",
+      "tags": ["Mage", "Support"]
+    },
+    {
+      "id": 517,
+      "name": "Sylas",
+      "attack_type": "melee",
+      "tags": ["Mage", "Assassin"]
+    },
+    {
+      "id": 134,
+      "name": "Syndra",
+      "attack_type": "ranged",
+      "tags": ["Mage"]
+    },
+    {
+      "id": 223,
+      "name": "Tahm Kench",
+      "attack_type": "melee",
+      "tags": ["Tank", "Support"]
+    },
+    {
+      "id": 163,
+      "name": "Taliyah",
+      "attack_type": "ranged",
+      "tags": ["Mage", "Support"]
+    },
+    {
+      "id": 91,
+      "name": "Talon",
+      "attack_type": "melee",
+      "tags": ["Assassin"]
+    },
+    {
+      "id": 44,
+      "name": "Taric",
+      "attack_type": "melee",
+      "tags": ["Support", "Tank"]
+    },
+    {
+      "id": 17,
+      "name": "Teemo",
+      "attack_type": "ranged",
+      "tags": ["Marksman", "Mage"]
+    },
+    {
+      "id": 412,
+      "name": "Thresh",
+      "attack_type": "ranged",
+      "tags": ["Support", "Tank"]
+    },
+    {
+      "id": 18,
+      "name": "Tristana",
+      "attack_type": "ranged",
+      "tags": ["Marksman", "Assassin"]
+    },
+    {
+      "id": 48,
+      "name": "Trundle",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Tank"]
+    },
+    {
+      "id": 23,
+      "name": "Tryndamere",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Assassin"]
+    },
+    {
+      "id": 4,
+      "name": "Twisted Fate",
+      "attack_type": "ranged",
+      "tags": ["Mage", "Marksman"]
+    },
+    {
+      "id": 29,
+      "name": "Twitch",
+      "attack_type": "ranged",
+      "tags": ["Marksman", "Assassin"]
+    },
+    {
+      "id": 77,
+      "name": "Udyr",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Tank"]
+    },
+    {
+      "id": 6,
+      "name": "Urgot",
+      "attack_type": "ranged",
+      "tags": ["Fighter", "Tank"]
+    },
+    {
+      "id": 110,
+      "name": "Varus",
+      "attack_type": "ranged",
+      "tags": ["Marksman", "Mage"]
+    },
+    {
+      "id": 67,
+      "name": "Vayne",
+      "attack_type": "ranged",
+      "tags": ["Marksman", "Assassin"]
+    },
+    {
+      "id": 45,
+      "name": "Veigar",
+      "attack_type": "ranged",
+      "tags": ["Mage"]
+    },
+    {
+      "id": 161,
+      "name": "Vel'Koz",
+      "attack_type": "ranged",
+      "tags": ["Mage", "Support"]
+    },
+    {
+      "id": 711,
+      "name": "Vex",
+      "attack_type": "ranged",
+      "tags": ["Mage"]
+    },
+    {
+      "id": 254,
+      "name": "Vi",
+      "attack_type": "melee",
+      "general": "Draft_info: Setup Dive Champ; kann einzelne Champions sehr consistent lockdownen, braucht follow up vom Team;",
+      "tags": ["Fighter", "Assassin"]
+    },
+    {
+      "id": 234,
+      "name": "Viego",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Assassin"]
+    },
+    {
+      "id": 112,
+      "name": "Viktor",
+      "attack_type": "ranged",
+      "tags": ["Mage"]
+    },
+    {
+      "id": 8,
+      "name": "Vladimir",
+      "attack_type": "ranged",
+      "tags": ["Mage", "Fighter"]
+    },
+    {
+      "id": 106,
+      "name": "Volibear",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Tank"]
+    },
+    {
+      "id": 19,
+      "name": "Warwick",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Tank"]
+    },
+    {
+      "id": 62,
+      "name": "Wukong",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Tank"]
+    },
+    {
+      "id": 498,
+      "name": "Xayah",
+      "attack_type": "ranged",
+      "tags": ["Marksman"]
+    },
+    {
+      "id": 101,
+      "name": "Xerath",
+      "attack_type": "ranged",
+      "tags": ["Mage", "Support"]
+    },
+    {
+      "id": 5,
+      "name": "Xin Zhao",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Tank"]
+    },
+    {
+      "id": 157,
+      "name": "Yasuo",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Assassin"]
+    },
+    {
+      "id": 777,
+      "name": "Yone",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Assassin"]
+    },
+    {
+      "id": 83,
+      "name": "Yorick",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Tank"]
+    },
+    {
+      "id": 804,
+      "name": "Yunara",
+      "attack_type": "ranged",
+      "tags": ["Marksman"]
+    },
+    {
+      "id": 350,
+      "name": "Yuumi",
+      "attack_type": "ranged",
+      "tags": ["Support", "Mage"]
+    },
+    {
+      "id": 904,
+      "name": "Zaahen",
+      "attack_type": "melee",
+      "tags": ["Fighter", "Assassin"]
+    },
+    {
+      "id": 154,
+      "name": "Zac",
+      "attack_type": "melee",
+      "tags": ["Tank", "Fighter"]
+    },
+    {
+      "id": 238,
+      "name": "Zed",
+      "general": "Draft_info: high mobility burst champ ohne cc; spielt gerne mit Dive; spielt ungerne gegen Peel und disengage",
+      "attack_type": "melee",
+      "tags": ["Assassin"]
+    },
+    {
+      "id": 221,
+      "name": "Zeri",
+      "attack_type": "ranged",
+      "tags": ["Marksman"]
+    },
+    {
+      "id": 115,
+      "name": "Ziggs",
+      "attack_type": "ranged",
+      "tags": ["Mage"]
+    },
+    {
+      "id": 26,
+      "name": "Zilean",
+      "attack_type": "ranged",
+      "tags": ["Support", "Mage"]
+    },
+    {
+      "id": 142,
+      "name": "Zoe",
+      "attack_type": "ranged",
+      "tags": ["Mage"]
+    },
+    {
+      "id": 143,
+      "name": "Zyra",
+      "attack_type": "ranged",
+      "tags": ["Mage", "Support"]
+    }
+  ]
+}

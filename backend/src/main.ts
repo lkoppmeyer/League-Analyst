@@ -6,6 +6,7 @@ import { Cache, RateLimiter } from './data/cache.js';
 import { createMatchRoutes } from './routes/matchRoutes.js';
 import { createSummonerRoutes } from './routes/summonerRoutes.js';
 import { createAiRoutes } from './routes/aiRoutes.js';
+import { getAllItems } from './data/championDb.js';
 import { MatchData } from './types/app.js';
 
 // Load environment variables
@@ -50,6 +51,10 @@ app.use('/api/match', matchRoutes);
 app.use('/api/summoner', summonerRoutes);
 app.use('/api/ask', createAiRoutes());
 
+app.get('/api/items', (_req, res) => {
+  res.json(getAllItems());
+});
+
 // Health check endpoint
 app.get('/health', async (_req, res) => {
   try {
@@ -82,7 +87,17 @@ app.use((err: any, _req: express.Request, res: express.Response, _next: express.
 
 // Start server
 app.listen(port, () => {
-  console.log(`✓ Backend server running on http://localhost:${port}`);
-  console.log(`✓ Match endpoint: GET http://localhost:${port}/api/match/:matchId`);
-  console.log(`✓ Health check: GET http://localhost:${port}/health`);
+  const b = `http://localhost:${port}`;
+  console.log(`\n✓ Backend running on ${b}\n`);
+  console.log('  Routes:');
+  console.log(`    GET  ${b}/api/match/:matchId`);
+  console.log(`    GET  ${b}/api/summoner/:name/:tag`);
+  console.log(`    GET  ${b}/api/summoner/:name/:tag/matches`);
+  console.log(`    POST ${b}/api/ask/analyze          (SSE)`);
+  console.log(`    POST ${b}/api/ask                  (chat)`);
+  console.log(`    GET  ${b}/api/ask/personas`);
+  console.log(`    GET  ${b}/api/ask/models`);
+  console.log(`    GET  ${b}/api/items`);
+  console.log(`    GET  ${b}/health`);
+  console.log('');
 });

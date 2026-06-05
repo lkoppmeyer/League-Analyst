@@ -37,6 +37,9 @@ export default function PlayerCard({ player, onClick }: Props) {
       <div className="player-info">
         <span className="player-name">{player.name}</span>
         <span className="player-role">{player.role}{player.championName ? ` · ${player.championName}` : ''}</span>
+        {player.kills !== undefined && (
+          <span className="player-kda">{player.kills}/{player.deaths}/{player.assists}</span>
+        )}
       </div>
     </button>
   );

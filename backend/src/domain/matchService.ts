@@ -1,27 +1,44 @@
 import { RiotApiClient } from '../data/riotApiClient.js';
 import { Cache } from '../data/cache.js';
+import { readDiskCache, writeDiskCache } from '../data/diskCache.js';
 import { MatchMapper } from './matchMapper.js';
+import { processTimeline } from './timelineProcessor.js';
 import { MatchData } from '../types/app.js';
 
 /**
- * Return a mapped MatchData for the given id, serving from cache when possible
- * and otherwise fetching from Riot, normalizing, mapping and caching the result.
+ * Return a mapped MatchData for the given id.
+ * Priority: in-memory cache → disk cache → Riot API (match + timeline in parallel).
  */
 export async function getOrFetchMatch(
   matchId: string,
   client: RiotApiClient,
   cache: Cache<MatchData>
 ): Promise<MatchData> {
-  const cached = cache.get(matchId);
-  if (cached) {
-    console.log(`[CACHE HIT] Match ${matchId}`);
-    return cached;
+  // 1. In-memory cache (hot path)
+  const inMemory = cache.get(matchId);
+  if (inMemory) {
+    console.log(`[CACHE HIT mem] ${matchId}`);
+    return inMemory;
   }
 
-  console.log(`[API FETCH] Match ${matchId}`);
-  let riotMatch = await client.getMatch(matchId);
+  // 2. Disk cache (survives server restarts)
+  const onDisk = readDiskCache<MatchData>(`match_${matchId}`);
+  if (onDisk) {
+    console.log(`[CACHE HIT disk] ${matchId}`);
+    cache.set(matchId, onDisk);
+    return onDisk;
+  }
 
-  // Normalize shape: some responses might already be the `info` object
+  // 3. Fetch from Riot API — match and timeline in parallel
+  console.log(`[API FETCH] ${matchId}`);
+  const [riotMatchRaw, riotTimeline] = await Promise.allSettled([
+    client.getMatch(matchId),
+    client.getTimeline(matchId),
+  ]);
+
+  if (riotMatchRaw.status === 'rejected') throw riotMatchRaw.reason;
+
+  let riotMatch = riotMatchRaw.value;
   if (!('info' in riotMatch) && riotMatch) {
     riotMatch = {
       metadata: (riotMatch as any).metadata || { matchId },
@@ -30,7 +47,20 @@ export async function getOrFetchMatch(
   }
 
   const appMatch = MatchMapper.mapRiotToApp(riotMatch as any);
+
+  // Attach timeline insights if the fetch succeeded
+  if (riotTimeline.status === 'fulfilled') {
+    try {
+      appMatch.timeline = processTimeline(riotTimeline.value);
+    } catch (err) {
+      console.warn(`[TIMELINE] Processing failed for ${matchId}:`, err);
+    }
+  } else {
+    console.warn(`[TIMELINE] Fetch failed for ${matchId}:`, riotTimeline.reason);
+  }
+
   cache.set(matchId, appMatch);
+  writeDiskCache(`match_${matchId}`, appMatch);
   return appMatch;
 }
 

@@ -1,0 +1,1755 @@
+{
+  "matchId": "EUW1_7874462978",
+  "blueTeam": {
+    "id": "100",
+    "name": "Blue Team",
+    "side": "blue",
+    "win": false,
+    "bans": [
+      200,
+      526,
+      517,
+      41,
+      91
+    ],
+    "objectives": {
+      "baron": 0,
+      "dragon": 0,
+      "tower": 3,
+      "inhibitor": 0,
+      "riftHerald": 1
+    }
+  },
+  "redTeam": {
+    "id": "200",
+    "name": "Red Team",
+    "side": "red",
+    "win": true,
+    "bans": [
+      81,
+      246,
+      58,
+      901,
+      166
+    ],
+    "objectives": {
+      "baron": 0,
+      "dragon": 4,
+      "tower": 10,
+      "inhibitor": 2,
+      "riftHerald": 0
+    }
+  },
+  "players": [
+    {
+      "id": "nYldZZR-cl1S-OxDLDNm2fuYykXtQACLpgHqDtaU8KXPkRLhbTnjLBhWayxb9HW_Nnzhz-uWHrfUJA",
+      "participantId": 1,
+      "name": "E X C",
+      "role": "Top",
+      "team": "blue",
+      "championId": 904,
+      "championName": "Zaahen",
+      "champLevel": 17,
+      "kills": 6,
+      "deaths": 5,
+      "assists": 2,
+      "goldEarned": 12060,
+      "minionsKilled": 221,
+      "items": [
+        3078,
+        6610,
+        3156,
+        3047,
+        1036,
+        1036,
+        3340
+      ],
+      "runes": {
+        "keystone": {
+          "id": 9923,
+          "name": "Hail of Blades",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/HailOfBlades/HailOfBlades.png"
+        },
+        "primaryTree": {
+          "id": 8100,
+          "name": "Domination",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7200_Domination.png"
+        },
+        "secondaryTree": {
+          "id": 8400,
+          "name": "Resolve",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7204_Resolve.png"
+        }
+      },
+      "totalDamageToChampions": 20525,
+      "totalDamageTaken": 32544,
+      "totalHeal": 8469,
+      "timeCCingOthers": 21,
+      "turretKills": 2,
+      "visionScore": 26,
+      "wardsPlaced": 11,
+      "wardsKilled": 1,
+      "multiKills": {
+        "double": 0,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 4
+      }
+    },
+    {
+      "id": "tl7ZA82eQPQ0d3OSDz-sc-vteVN45uul73j0YalQXF-odPyafoeWNham8kQDkvVwV804dC-l3xIEyA",
+      "participantId": 2,
+      "name": "Swing",
+      "role": "Jungle",
+      "team": "blue",
+      "championId": 107,
+      "championName": "Rengar",
+      "champLevel": 15,
+      "kills": 5,
+      "deaths": 11,
+      "assists": 9,
+      "goldEarned": 12062,
+      "minionsKilled": 22,
+      "items": [
+        3158,
+        3179,
+        6698,
+        3036,
+        3134,
+        3364
+      ],
+      "runes": {
+        "keystone": {
+          "id": 8010,
+          "name": "Conqueror",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Conqueror/Conqueror.png"
+        },
+        "primaryTree": {
+          "id": 8000,
+          "name": "Precision",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7201_Precision.png"
+        },
+        "secondaryTree": {
+          "id": 8100,
+          "name": "Domination",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7200_Domination.png"
+        }
+      },
+      "totalDamageToChampions": 16738,
+      "totalDamageTaken": 31846,
+      "totalHeal": 9954,
+      "timeCCingOthers": 14,
+      "turretKills": 0,
+      "visionScore": 30,
+      "wardsPlaced": 3,
+      "wardsKilled": 6,
+      "multiKills": {
+        "double": 0,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 2
+      }
+    },
+    {
+      "id": "2DlIYmTNfzO256aJiYLlcucTea3RSNR9gHaBNaLJsXkE_MOLufJO7Oi2Tj6JyHhIce9GecEThMKpBw",
+      "participantId": 3,
+      "name": "Frühling mit dir",
+      "role": "Mid",
+      "team": "blue",
+      "championId": 245,
+      "championName": "Ekko",
+      "champLevel": 15,
+      "kills": 7,
+      "deaths": 6,
+      "assists": 8,
+      "goldEarned": 11328,
+      "minionsKilled": 214,
+      "items": [
+        1058,
+        4645,
+        2510,
+        1082,
+        3175,
+        1058,
+        3364
+      ],
+      "runes": {
+        "keystone": {
+          "id": 9923,
+          "name": "Hail of Blades",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/HailOfBlades/HailOfBlades.png"
+        },
+        "primaryTree": {
+          "id": 8100,
+          "name": "Domination",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7200_Domination.png"
+        },
+        "secondaryTree": {
+          "id": 8000,
+          "name": "Precision",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7201_Precision.png"
+        }
+      },
+      "totalDamageToChampions": 21546,
+      "totalDamageTaken": 27295,
+      "totalHeal": 7735,
+      "timeCCingOthers": 12,
+      "turretKills": 0,
+      "visionScore": 33,
+      "wardsPlaced": 4,
+      "wardsKilled": 14,
+      "multiKills": {
+        "double": 0,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 5
+      }
+    },
+    {
+      "id": "VHgEfxkmuYVFNHeF2RgYw-FNq0-sgP983oWEfUe9549_ZurhCbAmK3XegdOP39GUMXxJ5lykPmUSCw",
+      "participantId": 4,
+      "name": "A7omic",
+      "role": "BOTTOM",
+      "team": "blue",
+      "championId": 51,
+      "championName": "Caitlyn",
+      "champLevel": 15,
+      "kills": 3,
+      "deaths": 6,
+      "assists": 5,
+      "goldEarned": 12000,
+      "minionsKilled": 246,
+      "items": [
+        2055,
+        3031,
+        1055,
+        3036,
+        2523,
+        3363
+      ],
+      "runes": {
+        "keystone": {
+          "id": 8008,
+          "name": "Lethal Tempo",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/LethalTempo/LethalTempoTemp.png"
+        },
+        "primaryTree": {
+          "id": 8000,
+          "name": "Precision",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7201_Precision.png"
+        },
+        "secondaryTree": {
+          "id": 8300,
+          "name": "Inspiration",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7203_Whimsy.png"
+        }
+      },
+      "totalDamageToChampions": 12668,
+      "totalDamageTaken": 17519,
+      "totalHeal": 2524,
+      "timeCCingOthers": 15,
+      "turretKills": 1,
+      "visionScore": 13,
+      "wardsPlaced": 7,
+      "wardsKilled": 3,
+      "multiKills": {
+        "double": 0,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 2
+      }
+    },
+    {
+      "id": "wswCuY4Vfi1ogeOxXksQvwh4VXZ_cMojTr5OlDPpPulIymRQqHjrbHxaFlYRmB2zUHqfd28IV_e0yQ",
+      "participantId": 5,
+      "name": "Klero",
+      "role": "Support",
+      "team": "blue",
+      "championId": 432,
+      "championName": "Bard",
+      "champLevel": 13,
+      "kills": 3,
+      "deaths": 7,
+      "assists": 14,
+      "goldEarned": 10058,
+      "minionsKilled": 44,
+      "items": [
+        3876,
+        3107,
+        6653,
+        3742,
+        3009,
+        3364
+      ],
+      "runes": {
+        "keystone": {
+          "id": 8112,
+          "name": "Electrocute",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/Electrocute/Electrocute.png"
+        },
+        "primaryTree": {
+          "id": 8100,
+          "name": "Domination",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7200_Domination.png"
+        },
+        "secondaryTree": {
+          "id": 8300,
+          "name": "Inspiration",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7203_Whimsy.png"
+        }
+      },
+      "totalDamageToChampions": 8157,
+      "totalDamageTaken": 22178,
+      "totalHeal": 2897,
+      "timeCCingOthers": 34,
+      "turretKills": 0,
+      "visionScore": 81,
+      "wardsPlaced": 26,
+      "wardsKilled": 12,
+      "multiKills": {
+        "double": 0,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 0
+      }
+    },
+    {
+      "id": "_ukmwVUN5D-fhXHWbn90Hn9J781Cp1VU3mXHiwjP2rcOE8stLp6UlC9f8cZ8G_pwpPigjVFK9dLzFA",
+      "participantId": 6,
+      "name": "PringelsOnion",
+      "role": "Top",
+      "team": "red",
+      "championId": 92,
+      "championName": "Riven",
+      "champLevel": 17,
+      "kills": 3,
+      "deaths": 5,
+      "assists": 2,
+      "goldEarned": 12583,
+      "minionsKilled": 226,
+      "items": [
+        1055,
+        6696,
+        3008,
+        6333,
+        3033,
+        3133,
+        3364
+      ],
+      "runes": {
+        "keystone": {
+          "id": 8010,
+          "name": "Conqueror",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Conqueror/Conqueror.png"
+        },
+        "primaryTree": {
+          "id": 8000,
+          "name": "Precision",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7201_Precision.png"
+        },
+        "secondaryTree": {
+          "id": 8300,
+          "name": "Inspiration",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7203_Whimsy.png"
+        }
+      },
+      "totalDamageToChampions": 11915,
+      "totalDamageTaken": 19069,
+      "totalHeal": 4382,
+      "timeCCingOthers": 21,
+      "turretKills": 2,
+      "visionScore": 17,
+      "wardsPlaced": 5,
+      "wardsKilled": 4,
+      "multiKills": {
+        "double": 1,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 2
+      }
+    },
+    {
+      "id": "jeC-H1OqAs29o3MyA9ifrvPnkpDG9do5k-S7hyFJr3nDE56HjYXpCowO0wLZ0GXSoSwbcTpF2jrfDw",
+      "participantId": 7,
+      "name": "Yrdethynlet",
+      "role": "Jungle",
+      "team": "red",
+      "championId": 56,
+      "championName": "Nocturne",
+      "champLevel": 17,
+      "kills": 5,
+      "deaths": 5,
+      "assists": 8,
+      "goldEarned": 13741,
+      "minionsKilled": 26,
+      "items": [
+        3179,
+        6698,
+        2520,
+        3111,
+        3133,
+        2019,
+        3363
+      ],
+      "runes": {
+        "keystone": {
+          "id": 9923,
+          "name": "Hail of Blades",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/HailOfBlades/HailOfBlades.png"
+        },
+        "primaryTree": {
+          "id": 8100,
+          "name": "Domination",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7200_Domination.png"
+        },
+        "secondaryTree": {
+          "id": 8000,
+          "name": "Precision",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7201_Precision.png"
+        }
+      },
+      "totalDamageToChampions": 18173,
+      "totalDamageTaken": 25370,
+      "totalHeal": 14347,
+      "timeCCingOthers": 163,
+      "turretKills": 2,
+      "visionScore": 34,
+      "wardsPlaced": 11,
+      "wardsKilled": 6,
+      "multiKills": {
+        "double": 1,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 2
+      }
+    },
+    {
+      "id": "EvaaFfzvjjWf9IQiDKRVUxicRJgawbfV06OXf6dVfXMbg9-_LLJjSSgFEpdWd6FpJpS8t6pzFiPDuw",
+      "participantId": 8,
+      "name": "Fenses",
+      "role": "Mid",
+      "team": "red",
+      "championId": 55,
+      "championName": "Katarina",
+      "champLevel": 17,
+      "kills": 27,
+      "deaths": 4,
+      "assists": 4,
+      "goldEarned": 19892,
+      "minionsKilled": 224,
+      "items": [
+        4645,
+        3135,
+        3157,
+        3175,
+        3089,
+        3100,
+        3340
+      ],
+      "runes": {
+        "keystone": {
+          "id": 8128,
+          "name": "Dark Harvest",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/DarkHarvest/DarkHarvest.png"
+        },
+        "primaryTree": {
+          "id": 8100,
+          "name": "Domination",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7200_Domination.png"
+        },
+        "secondaryTree": {
+          "id": 8000,
+          "name": "Precision",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7201_Precision.png"
+        }
+      },
+      "totalDamageToChampions": 55834,
+      "totalDamageTaken": 25644,
+      "totalHeal": 7241,
+      "timeCCingOthers": 12,
+      "turretKills": 3,
+      "visionScore": 31,
+      "wardsPlaced": 15,
+      "wardsKilled": 1,
+      "multiKills": {
+        "double": 7,
+        "triple": 4,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 19
+      }
+    },
+    {
+      "id": "Xgj8dy6pUHARyqE8VfK7KjzsjHCZVpcgW1k3RygDQa9E3hl3kQ0Q2wixuZpS6Sz4o7VnSZT8ywNkaA",
+      "participantId": 9,
+      "name": "Shawπ",
+      "role": "BOTTOM",
+      "team": "red",
+      "championId": 22,
+      "championName": "Ashe",
+      "champLevel": 15,
+      "kills": 0,
+      "deaths": 5,
+      "assists": 14,
+      "goldEarned": 10914,
+      "minionsKilled": 192,
+      "items": [
+        3031,
+        6672,
+        3046,
+        3363
+      ],
+      "runes": {
+        "keystone": {
+          "id": 8008,
+          "name": "Lethal Tempo",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/LethalTempo/LethalTempoTemp.png"
+        },
+        "primaryTree": {
+          "id": 8000,
+          "name": "Precision",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7201_Precision.png"
+        },
+        "secondaryTree": {
+          "id": 8100,
+          "name": "Domination",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7200_Domination.png"
+        }
+      },
+      "totalDamageToChampions": 19694,
+      "totalDamageTaken": 12917,
+      "totalHeal": 1246,
+      "timeCCingOthers": 50,
+      "turretKills": 2,
+      "visionScore": 14,
+      "wardsPlaced": 6,
+      "wardsKilled": 1,
+      "multiKills": {
+        "double": 0,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 0
+      }
+    },
+    {
+      "id": "nYDOroPnLY-iw8s1RP6jRlSIeVVNdGRIHORIOv49AbLpfiwRP7GqeIcA0fuQw4hTHKKRSFUKBvdbjg",
+      "participantId": 10,
+      "name": "AH Azo",
+      "role": "Support",
+      "team": "red",
+      "championId": 497,
+      "championName": "Rakan",
+      "champLevel": 13,
+      "kills": 0,
+      "deaths": 5,
+      "assists": 23,
+      "goldEarned": 8441,
+      "minionsKilled": 21,
+      "items": [
+        3876,
+        3222,
+        3111,
+        3050,
+        3067,
+        3364
+      ],
+      "runes": {
+        "keystone": {
+          "id": 8465,
+          "name": "Guardian",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/Guardian/Guardian.png"
+        },
+        "primaryTree": {
+          "id": 8400,
+          "name": "Resolve",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7204_Resolve.png"
+        },
+        "secondaryTree": {
+          "id": 8100,
+          "name": "Domination",
+          "iconUrl": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7200_Domination.png"
+        }
+      },
+      "totalDamageToChampions": 5345,
+      "totalDamageTaken": 21218,
+      "totalHeal": 5224,
+      "timeCCingOthers": 32,
+      "turretKills": 0,
+      "visionScore": 84,
+      "wardsPlaced": 38,
+      "wardsKilled": 8,
+      "multiKills": {
+        "double": 0,
+        "triple": 0,
+        "quadra": 0,
+        "penta": 0,
+        "largestSpree": 0
+      }
+    }
+  ],
+  "gameMode": "CLASSIC",
+  "gameDuration": 1692,
+  "gameVersion": "16.11.782.1492",
+  "timestamp": 1780430150874,
+  "mapId": 11,
+  "queueId": 420,
+  "gameCreation": 1780430077360,
+  "timeline": {
+    "participants": {
+      "1": {
+        "levelTimings": [
+          102,
+          124,
+          193,
+          250,
+          337,
+          413,
+          496,
+          590,
+          687,
+          709,
+          829,
+          875,
+          1103,
+          1280,
+          1385,
+          1624
+        ],
+        "itemsBought": [
+          {
+            "itemId": 1055,
+            "timestamp": 12
+          },
+          {
+            "itemId": 2003,
+            "timestamp": 12
+          },
+          {
+            "itemId": 3044,
+            "timestamp": 300
+          },
+          {
+            "itemId": 1036,
+            "timestamp": 302
+          },
+          {
+            "itemId": 2031,
+            "timestamp": 303
+          },
+          {
+            "itemId": 3057,
+            "timestamp": 512
+          },
+          {
+            "itemId": 1042,
+            "timestamp": 513
+          },
+          {
+            "itemId": 3078,
+            "timestamp": 630
+          },
+          {
+            "itemId": 1001,
+            "timestamp": 631
+          },
+          {
+            "itemId": 3047,
+            "timestamp": 751
+          },
+          {
+            "itemId": 2022,
+            "timestamp": 758
+          },
+          {
+            "itemId": 2021,
+            "timestamp": 890
+          },
+          {
+            "itemId": 3133,
+            "timestamp": 1051
+          },
+          {
+            "itemId": 1028,
+            "timestamp": 1052
+          },
+          {
+            "itemId": 6610,
+            "timestamp": 1065
+          },
+          {
+            "itemId": 1036,
+            "timestamp": 1141
+          },
+          {
+            "itemId": 3155,
+            "timestamp": 1312
+          },
+          {
+            "itemId": 3133,
+            "timestamp": 1431
+          },
+          {
+            "itemId": 3156,
+            "timestamp": 1487
+          },
+          {
+            "itemId": 1036,
+            "timestamp": 1600
+          },
+          {
+            "itemId": 1036,
+            "timestamp": 1661
+          }
+        ],
+        "goldAt10": 4047,
+        "csAt10": 84,
+        "levelAt10": 9,
+        "goldAt15": 6763,
+        "csAt15": 139
+      },
+      "2": {
+        "levelTimings": [
+          75,
+          122,
+          257,
+          327,
+          445,
+          511,
+          616,
+          709,
+          793,
+          977,
+          1184,
+          1319,
+          1533,
+          1652
+        ],
+        "itemsBought": [
+          {
+            "itemId": 3340,
+            "timestamp": 5
+          },
+          {
+            "itemId": 1102,
+            "timestamp": 7
+          },
+          {
+            "itemId": 3340,
+            "timestamp": 8
+          },
+          {
+            "itemId": 1036,
+            "timestamp": 198
+          },
+          {
+            "itemId": 1036,
+            "timestamp": 198
+          },
+          {
+            "itemId": 3134,
+            "timestamp": 301
+          },
+          {
+            "itemId": 1036,
+            "timestamp": 302
+          },
+          {
+            "itemId": 1001,
+            "timestamp": 363
+          },
+          {
+            "itemId": 3364,
+            "timestamp": 365
+          },
+          {
+            "itemId": 3133,
+            "timestamp": 541
+          },
+          {
+            "itemId": 3179,
+            "timestamp": 735
+          },
+          {
+            "itemId": 3077,
+            "timestamp": 736
+          },
+          {
+            "itemId": 1037,
+            "timestamp": 841
+          },
+          {
+            "itemId": 6698,
+            "timestamp": 1043
+          },
+          {
+            "itemId": 3158,
+            "timestamp": 1050
+          },
+          {
+            "itemId": 1036,
+            "timestamp": 1136
+          },
+          {
+            "itemId": 2055,
+            "timestamp": 1147
+          },
+          {
+            "itemId": 1036,
+            "timestamp": 1253
+          },
+          {
+            "itemId": 1036,
+            "timestamp": 1253
+          },
+          {
+            "itemId": 3035,
+            "timestamp": 1357
+          },
+          {
+            "itemId": 1018,
+            "timestamp": 1479
+          },
+          {
+            "itemId": 3036,
+            "timestamp": 1574
+          },
+          {
+            "itemId": 1036,
+            "timestamp": 1588
+          },
+          {
+            "itemId": 1036,
+            "timestamp": 1588
+          },
+          {
+            "itemId": 3134,
+            "timestamp": 1660
+          }
+        ],
+        "goldAt10": 3639,
+        "csAt10": 64,
+        "levelAt10": 7,
+        "goldAt15": 5921,
+        "csAt15": 104
+      },
+      "3": {
+        "levelTimings": [
+          87,
+          121,
+          183,
+          246,
+          338,
+          391,
+          510,
+          594,
+          747,
+          878,
+          996,
+          1105,
+          1282,
+          1660
+        ],
+        "itemsBought": [
+          {
+            "itemId": 1056,
+            "timestamp": 5
+          },
+          {
+            "itemId": 2003,
+            "timestamp": 5
+          },
+          {
+            "itemId": 2003,
+            "timestamp": 5
+          },
+          {
+            "itemId": 3340,
+            "timestamp": 6
+          },
+          {
+            "itemId": 1082,
+            "timestamp": 201
+          },
+          {
+            "itemId": 1052,
+            "timestamp": 202
+          },
+          {
+            "itemId": 2031,
+            "timestamp": 202
+          },
+          {
+            "itemId": 1026,
+            "timestamp": 297
+          },
+          {
+            "itemId": 3057,
+            "timestamp": 466
+          },
+          {
+            "itemId": 3067,
+            "timestamp": 617
+          },
+          {
+            "itemId": 1001,
+            "timestamp": 618
+          },
+          {
+            "itemId": 2510,
+            "timestamp": 725
+          },
+          {
+            "itemId": 1052,
+            "timestamp": 727
+          },
+          {
+            "itemId": 3364,
+            "timestamp": 729
+          },
+          {
+            "itemId": 1058,
+            "timestamp": 859
+          },
+          {
+            "itemId": 3145,
+            "timestamp": 962
+          },
+          {
+            "itemId": 4645,
+            "timestamp": 1051
+          },
+          {
+            "itemId": 3020,
+            "timestamp": 1187
+          },
+          {
+            "itemId": 1058,
+            "timestamp": 1353
+          },
+          {
+            "itemId": 1058,
+            "timestamp": 1586
+          }
+        ],
+        "goldAt10": 3996,
+        "csAt10": 87,
+        "levelAt10": 9,
+        "goldAt15": 6596,
+        "csAt15": 124
+      },
+      "4": {
+        "levelTimings": [
+          101,
+          160,
+          204,
+          311,
+          364,
+          452,
+          555,
+          726,
+          847,
+          971,
+          1165,
+          1346,
+          1548,
+          1673
+        ],
+        "itemsBought": [
+          {
+            "itemId": 1055,
+            "timestamp": 4
+          },
+          {
+            "itemId": 2003,
+            "timestamp": 4
+          },
+          {
+            "itemId": 3340,
+            "timestamp": 5
+          },
+          {
+            "itemId": 1037,
+            "timestamp": 260
+          },
+          {
+            "itemId": 1036,
+            "timestamp": 378
+          },
+          {
+            "itemId": 1036,
+            "timestamp": 378
+          },
+          {
+            "itemId": 2523,
+            "timestamp": 596
+          },
+          {
+            "itemId": 1001,
+            "timestamp": 597
+          },
+          {
+            "itemId": 1029,
+            "timestamp": 739
+          },
+          {
+            "itemId": 3047,
+            "timestamp": 887
+          },
+          {
+            "itemId": 1038,
+            "timestamp": 888
+          },
+          {
+            "itemId": 1037,
+            "timestamp": 1024
+          },
+          {
+            "itemId": 1018,
+            "timestamp": 1025
+          },
+          {
+            "itemId": 3363,
+            "timestamp": 1027
+          },
+          {
+            "itemId": 3031,
+            "timestamp": 1181
+          },
+          {
+            "itemId": 1036,
+            "timestamp": 1182
+          },
+          {
+            "itemId": 1036,
+            "timestamp": 1233
+          },
+          {
+            "itemId": 3035,
+            "timestamp": 1353
+          },
+          {
+            "itemId": 1036,
+            "timestamp": 1530
+          },
+          {
+            "itemId": 1018,
+            "timestamp": 1531
+          },
+          {
+            "itemId": 3036,
+            "timestamp": 1644
+          },
+          {
+            "itemId": 2055,
+            "timestamp": 1645
+          }
+        ],
+        "goldAt10": 3615,
+        "csAt10": 92,
+        "levelAt10": 8,
+        "goldAt15": 6241,
+        "csAt15": 132
+      },
+      "5": {
+        "levelTimings": [
+          100,
+          170,
+          241,
+          460,
+          666,
+          771,
+          918,
+          988,
+          1223,
+          1376,
+          1476,
+          1566
+        ],
+        "itemsBought": [
+          {
+            "itemId": 2003,
+            "timestamp": 8
+          },
+          {
+            "itemId": 2003,
+            "timestamp": 8
+          },
+          {
+            "itemId": 1028,
+            "timestamp": 202
+          },
+          {
+            "itemId": 1029,
+            "timestamp": 203
+          },
+          {
+            "itemId": 3364,
+            "timestamp": 204
+          },
+          {
+            "itemId": 3066,
+            "timestamp": 316
+          },
+          {
+            "itemId": 1028,
+            "timestamp": 475
+          },
+          {
+            "itemId": 3009,
+            "timestamp": 600
+          },
+          {
+            "itemId": 1031,
+            "timestamp": 600
+          },
+          {
+            "itemId": 2055,
+            "timestamp": 701
+          },
+          {
+            "itemId": 3742,
+            "timestamp": 862
+          },
+          {
+            "itemId": 1052,
+            "timestamp": 864
+          },
+          {
+            "itemId": 2055,
+            "timestamp": 865
+          },
+          {
+            "itemId": 2055,
+            "timestamp": 866
+          },
+          {
+            "itemId": 2508,
+            "timestamp": 1045
+          },
+          {
+            "itemId": 1052,
+            "timestamp": 1046
+          },
+          {
+            "itemId": 2055,
+            "timestamp": 1047
+          },
+          {
+            "itemId": 1028,
+            "timestamp": 1060
+          },
+          {
+            "itemId": 3147,
+            "timestamp": 1164
+          },
+          {
+            "itemId": 6653,
+            "timestamp": 1334
+          },
+          {
+            "itemId": 3114,
+            "timestamp": 1523
+          },
+          {
+            "itemId": 3107,
+            "timestamp": 1612
+          }
+        ],
+        "goldAt10": 3242,
+        "csAt10": 9,
+        "levelAt10": 5,
+        "goldAt15": 4952,
+        "csAt15": 20
+      },
+      "6": {
+        "levelTimings": [
+          109,
+          143,
+          176,
+          263,
+          309,
+          414,
+          512,
+          640,
+          786,
+          853,
+          973,
+          1126,
+          1232,
+          1436,
+          1491,
+          1658
+        ],
+        "itemsBought": [
+          {
+            "itemId": 1055,
+            "timestamp": 10
+          },
+          {
+            "itemId": 2003,
+            "timestamp": 10
+          },
+          {
+            "itemId": 3364,
+            "timestamp": 11
+          },
+          {
+            "itemId": 3340,
+            "timestamp": 11
+          },
+          {
+            "itemId": 1036,
+            "timestamp": 206
+          },
+          {
+            "itemId": 2022,
+            "timestamp": 207
+          },
+          {
+            "itemId": 3133,
+            "timestamp": 327
+          },
+          {
+            "itemId": 1037,
+            "timestamp": 537
+          },
+          {
+            "itemId": 1001,
+            "timestamp": 539
+          },
+          {
+            "itemId": 2022,
+            "timestamp": 616
+          },
+          {
+            "itemId": 6696,
+            "timestamp": 723
+          },
+          {
+            "itemId": 3008,
+            "timestamp": 888
+          },
+          {
+            "itemId": 2019,
+            "timestamp": 1086
+          },
+          {
+            "itemId": 3133,
+            "timestamp": 1086
+          },
+          {
+            "itemId": 3364,
+            "timestamp": 1087
+          },
+          {
+            "itemId": 6333,
+            "timestamp": 1183
+          },
+          {
+            "itemId": 3123,
+            "timestamp": 1276
+          },
+          {
+            "itemId": 1036,
+            "timestamp": 1277
+          },
+          {
+            "itemId": 3033,
+            "timestamp": 1558
+          },
+          {
+            "itemId": 1036,
+            "timestamp": 1562
+          },
+          {
+            "itemId": 3133,
+            "timestamp": 1670
+          }
+        ],
+        "goldAt10": 3091,
+        "csAt10": 79,
+        "levelAt10": 8,
+        "goldAt15": 4490,
+        "csAt15": 110
+      },
+      "7": {
+        "levelTimings": [
+          77,
+          130,
+          191,
+          285,
+          395,
+          480,
+          652,
+          779,
+          887,
+          1015,
+          1069,
+          1180,
+          1305,
+          1432,
+          1539,
+          1658
+        ],
+        "itemsBought": [
+          {
+            "itemId": 1101,
+            "timestamp": 2
+          },
+          {
+            "itemId": 3340,
+            "timestamp": 2
+          },
+          {
+            "itemId": 2003,
+            "timestamp": 2
+          },
+          {
+            "itemId": 1001,
+            "timestamp": 203
+          },
+          {
+            "itemId": 3077,
+            "timestamp": 309
+          },
+          {
+            "itemId": 2020,
+            "timestamp": 578
+          },
+          {
+            "itemId": 6698,
+            "timestamp": 596
+          },
+          {
+            "itemId": 3134,
+            "timestamp": 924
+          },
+          {
+            "itemId": 3133,
+            "timestamp": 924
+          },
+          {
+            "itemId": 3179,
+            "timestamp": 946
+          },
+          {
+            "itemId": 3134,
+            "timestamp": 1102
+          },
+          {
+            "itemId": 2055,
+            "timestamp": 1104
+          },
+          {
+            "itemId": 3363,
+            "timestamp": 1106
+          },
+          {
+            "itemId": 2520,
+            "timestamp": 1444
+          },
+          {
+            "itemId": 1033,
+            "timestamp": 1449
+          },
+          {
+            "itemId": 3111,
+            "timestamp": 1606
+          },
+          {
+            "itemId": 3133,
+            "timestamp": 1607
+          },
+          {
+            "itemId": 2019,
+            "timestamp": 1607
+          }
+        ],
+        "goldAt10": 3659,
+        "csAt10": 65,
+        "levelAt10": 7,
+        "goldAt15": 6177,
+        "csAt15": 108
+      },
+      "8": {
+        "levelTimings": [
+          95,
+          121,
+          206,
+          261,
+          323,
+          449,
+          537,
+          709,
+          810,
+          881,
+          1013,
+          1051,
+          1127,
+          1246,
+          1346,
+          1521
+        ],
+        "itemsBought": [
+          {
+            "itemId": 1056,
+            "timestamp": 9
+          },
+          {
+            "itemId": 3340,
+            "timestamp": 9
+          },
+          {
+            "itemId": 2003,
+            "timestamp": 9
+          },
+          {
+            "itemId": 2003,
+            "timestamp": 10
+          },
+          {
+            "itemId": 1082,
+            "timestamp": 181
+          },
+          {
+            "itemId": 1026,
+            "timestamp": 339
+          },
+          {
+            "itemId": 1052,
+            "timestamp": 342
+          },
+          {
+            "itemId": 1001,
+            "timestamp": 343
+          },
+          {
+            "itemId": 2022,
+            "timestamp": 344
+          },
+          {
+            "itemId": 3057,
+            "timestamp": 477
+          },
+          {
+            "itemId": 3100,
+            "timestamp": 577
+          },
+          {
+            "itemId": 3020,
+            "timestamp": 692
+          },
+          {
+            "itemId": 1052,
+            "timestamp": 862
+          },
+          {
+            "itemId": 1052,
+            "timestamp": 863
+          },
+          {
+            "itemId": 4645,
+            "timestamp": 991
+          },
+          {
+            "itemId": 2055,
+            "timestamp": 993
+          },
+          {
+            "itemId": 2420,
+            "timestamp": 1075
+          },
+          {
+            "itemId": 3157,
+            "timestamp": 1147
+          },
+          {
+            "itemId": 1058,
+            "timestamp": 1283
+          },
+          {
+            "itemId": 3089,
+            "timestamp": 1401
+          },
+          {
+            "itemId": 4630,
+            "timestamp": 1408
+          },
+          {
+            "itemId": 3135,
+            "timestamp": 1539
+          },
+          {
+            "itemId": 2139,
+            "timestamp": 1593
+          }
+        ],
+        "goldAt10": 4135,
+        "csAt10": 71,
+        "levelAt10": 8,
+        "goldAt15": 6869,
+        "csAt15": 118
+      },
+      "9": {
+        "levelTimings": [
+          104,
+          160,
+          223,
+          306,
+          407,
+          487,
+          647,
+          793,
+          1002,
+          1129,
+          1218,
+          1320,
+          1476,
+          1593
+        ],
+        "itemsBought": [
+          {
+            "itemId": 1086,
+            "timestamp": 13
+          },
+          {
+            "itemId": 3340,
+            "timestamp": 14
+          },
+          {
+            "itemId": 1001,
+            "timestamp": 241
+          },
+          {
+            "itemId": 1042,
+            "timestamp": 241
+          },
+          {
+            "itemId": 1042,
+            "timestamp": 241
+          },
+          {
+            "itemId": 3006,
+            "timestamp": 366
+          },
+          {
+            "itemId": 1042,
+            "timestamp": 368
+          },
+          {
+            "itemId": 1042,
+            "timestamp": 368
+          },
+          {
+            "itemId": 1043,
+            "timestamp": 573
+          },
+          {
+            "itemId": 1036,
+            "timestamp": 574
+          },
+          {
+            "itemId": 2055,
+            "timestamp": 578
+          },
+          {
+            "itemId": 3051,
+            "timestamp": 696
+          },
+          {
+            "itemId": 6672,
+            "timestamp": 850
+          },
+          {
+            "itemId": 3363,
+            "timestamp": 858
+          },
+          {
+            "itemId": 1042,
+            "timestamp": 959
+          },
+          {
+            "itemId": 1042,
+            "timestamp": 959
+          },
+          {
+            "itemId": 3086,
+            "timestamp": 1089
+          },
+          {
+            "itemId": 3046,
+            "timestamp": 1277
+          },
+          {
+            "itemId": 1018,
+            "timestamp": 1278
+          },
+          {
+            "itemId": 1038,
+            "timestamp": 1540
+          },
+          {
+            "itemId": 1037,
+            "timestamp": 1541
+          },
+          {
+            "itemId": 3031,
+            "timestamp": 1662
+          }
+        ],
+        "goldAt10": 3177,
+        "csAt10": 75,
+        "levelAt10": 7,
+        "goldAt15": 4799,
+        "csAt15": 107
+      },
+      "10": {
+        "levelTimings": [
+          104,
+          160,
+          224,
+          436,
+          576,
+          788,
+          957,
+          1028,
+          1064,
+          1218,
+          1349,
+          1656
+        ],
+        "itemsBought": [
+          {
+            "itemId": 3340,
+            "timestamp": 14
+          },
+          {
+            "itemId": 2003,
+            "timestamp": 14
+          },
+          {
+            "itemId": 2003,
+            "timestamp": 14
+          },
+          {
+            "itemId": 3364,
+            "timestamp": 15
+          },
+          {
+            "itemId": 1001,
+            "timestamp": 239
+          },
+          {
+            "itemId": 2055,
+            "timestamp": 241
+          },
+          {
+            "itemId": 1033,
+            "timestamp": 367
+          },
+          {
+            "itemId": 2055,
+            "timestamp": 369
+          },
+          {
+            "itemId": 2031,
+            "timestamp": 369
+          },
+          {
+            "itemId": 3111,
+            "timestamp": 581
+          },
+          {
+            "itemId": 2055,
+            "timestamp": 582
+          },
+          {
+            "itemId": 3067,
+            "timestamp": 682
+          },
+          {
+            "itemId": 2055,
+            "timestamp": 683
+          },
+          {
+            "itemId": 2055,
+            "timestamp": 854
+          },
+          {
+            "itemId": 1033,
+            "timestamp": 855
+          },
+          {
+            "itemId": 1029,
+            "timestamp": 994
+          },
+          {
+            "itemId": 2055,
+            "timestamp": 995
+          },
+          {
+            "itemId": 3050,
+            "timestamp": 1084
+          },
+          {
+            "itemId": 2055,
+            "timestamp": 1084
+          },
+          {
+            "itemId": 1028,
+            "timestamp": 1086
+          },
+          {
+            "itemId": 3067,
+            "timestamp": 1159
+          },
+          {
+            "itemId": 2055,
+            "timestamp": 1160
+          },
+          {
+            "itemId": 3114,
+            "timestamp": 1235
+          },
+          {
+            "itemId": 3222,
+            "timestamp": 1425
+          },
+          {
+            "itemId": 2055,
+            "timestamp": 1426
+          },
+          {
+            "itemId": 1028,
+            "timestamp": 1524
+          },
+          {
+            "itemId": 2022,
+            "timestamp": 1524
+          },
+          {
+            "itemId": 3067,
+            "timestamp": 1604
+          }
+        ],
+        "goldAt10": 2569,
+        "csAt10": 13,
+        "levelAt10": 6,
+        "goldAt15": 3838,
+        "csAt15": 17
+      }
+    },
+    "firstBloodAt": 170,
+    "firstTowerAt": 937,
+    "firstDragonAt": 530,
+    "firstHeraldAt": 977
+  }
+}
